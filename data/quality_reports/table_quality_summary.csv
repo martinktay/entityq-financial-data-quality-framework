@@ -1,0 +1,6 @@
+table_name,dimensions_checked,total_rules,total_failed_records,overall_quality_score,status
+entities,4,9,4301,80.64,Monitor
+entity_hierarchy,3,5,401,96.19,Good
+issuers,4,5,202,97.42,Good
+kyc_attributes,3,4,4138,82.72,Monitor
+provider_feed,4,4,756,95.1,Good

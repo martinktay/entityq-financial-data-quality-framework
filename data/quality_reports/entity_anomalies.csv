@@ -1,0 +1,154 @@
+entity_id,legal_name,normalized_name,country_code,registration_number,entity_type,sector,industry,status,incorporation_date,last_verified_date,source_system,created_at,updated_at,anomaly_label,anomaly_score
+ENT003006,Summit Investments,SUMMIT INVESTMENTS,,,SPV,Telecommunications,Oil & Gas,Inactive,2020-10-17,2024-07-23,ProviderA,2020-04-29,2024-01-05,Anomaly,-0.0489
+ENT003785,Helios Technologies,HELIOS TECHNOLOGIES,LU,,Financial Institution,Financials,Oil & Gas,Inactive,2015-10-01,2017-02-26,ProviderA,2020-11-11,2024-06-27,Anomaly,-0.04835
+ENT004902,Falcon Group,FALCON,FR,,Government Entity,Technology,Software,Inactive,2010-10-13,2022-06-28,KYC Platform,2021-01-30,2023-10-01,Anomaly,-0.04679
+ENT001515,,,,,Financial Institution,Technology,Pharmaceuticals,Inactive,1992-01-01,2023-07-09,Manual Upload,2023-07-10,2024-02-29,Anomaly,-0.0447
+ENT002389,Helios Investments,HELIOS INVESTMENTS,BR,,Public Company,Financials,Mining,Merged,2000-05-26,2024-02-07,KYC Platform,2021-08-19,2023-06-21,Anomaly,-0.04283
+ENT003933,Sterling Technologies,STERLING TECHNOLOGIES,FR,,SPV,Materials,Private Equity,Merged,2003-09-11,2019-06-28,Internal Master,2023-12-07,2024-06-04,Anomaly,-0.04106
+ENT002380,,,CH,,Private Company,Utilities,Retail,Inactive,2023-01-04,2022-05-26,ProviderA,2023-05-03,2024-03-24,Anomaly,-0.03847
+ENT001437,PrimeEdge Holdings,PRIMEEDGE,NG,NG-505362,,Real Estate,Software,Merged,1991-06-22,2015-06-14,Manual Upload,2024-03-26,2023-07-05,Anomaly,-0.03753
+ENT000807,Horizon Industries,HORIZON INDUSTRIES,BR,,Fund,Financials,Logistics,Unknown,2018-07-20,2023-07-25,ProviderA,2021-07-11,2025-01-05,Anomaly,-0.03411
+ENT004167,Greenfield Limited,GREENFIELD,JP,,SPV,Real Estate,Logistics,Inactive,2007-10-20,2018-04-24,KYC Platform,2020-04-30,2023-05-27,Anomaly,-0.03404
+ENT001768,Atlas Ltd,ATLAS,LU,LU-647318,Financial Institution,Financials,Banking,Merged,2014-01-07,2017-04-09,Internal Master,2022-09-29,2024-11-11,Anomaly,-0.03073
+ENT000130,BluePeak Partners,BLUEPEAK PARTNERS,HK,,Government Entity,Industrials,Telecom Services,Inactive,1995-04-30,2023-09-30,ProviderA,2020-04-20,2023-03-03,Anomaly,-0.03058
+ENT004909,Nova Industries,NOVA INDUSTRIES,BR,,Fund,Materials,Banking,Unknown,2001-07-17,2024-12-30,Issuer Feed,2021-01-13,2024-10-03,Anomaly,-0.03008
+ENT004340,Oakwell Corporation,OAKWELL,US,,Public Company,Healthcare,Oil & Gas,Dissolved,1993-05-18,2018-08-03,KYC Platform,2024-05-29,2024-11-08,Anomaly,-0.02492
+ENT004004,Crestline Holdings,CRESTLINE,HK,,Fund,Healthcare,Retail,Inactive,1985-06-16,2023-11-24,ProviderB,2021-01-03,2024-10-27,Anomaly,-0.02376
+ENT004195,Westbridge Holdings,WESTBRIDGE,,CA-612535,,Industrials,Retail,Dissolved,2009-10-07,2023-10-21,ProviderA,2023-03-01,2023-07-12,Anomaly,-0.02236
+ENT003395,Nova Investments,NOVA INVESTMENTS,ZA,,Fund,Energy,Software,Inactive,2015-08-08,2023-08-19,Issuer Feed,2021-06-03,2024-10-28,Anomaly,-0.02236
+ENT003306,Helios Limited,HELIOS,IN,,Private Company,Energy,Mining,Inactive,2007-04-12,2016-04-30,ProviderB,2022-01-22,2024-02-19,Anomaly,-0.02157
+ENT000607,Lagos Continental Services,LAGOS CONTINENTAL SERVICES,NL,,Private Company,Materials,Mining,Merged,1981-11-02,2020-09-30,Manual Upload,2022-02-15,2024-09-06,Anomaly,-0.02047
+ENT000180,,,CA,,Financial Institution,Healthcare,Logistics,Active,1980-03-24,2022-07-25,Internal Master,2020-10-17,2023-09-10,Anomaly,-0.02036
+ENT000546,Albion Energy,ALBION ENERGY,AU,,Private Company,Financials,Software,Inactive,1995-01-06,2021-03-07,ProviderA,2023-06-12,2024-01-27,Anomaly,-0.0203
+ENT003694,Frontier Technologies,FRONTIER TECHNOLOGIES,DE,,Fund,Financials,Telecom Services,Inactive,1992-01-09,2024-08-16,Issuer Feed,2020-08-28,2024-02-12,Anomaly,-0.02004
+ENT004745,Meridian Ltd,MERIDIAN,JP,,Financial Institution,Financials,Power Generation,Merged,1984-12-17,2024-03-30,KYC Platform,2020-11-03,2023-10-02,Anomaly,-0.01972
+ENT004138,Korefield Corporation,KOREFIELD,AE,,SPV,Energy,Software,Inactive,2002-09-08,2022-08-11,Internal Master,2020-08-01,2024-10-10,Anomaly,-0.01951
+ENT001209,Falcon Holdings,FALCON,NL,,Public Company,Materials,Pharmaceuticals,Unknown,1997-10-25,2023-03-24,ProviderA,2022-01-14,2024-01-24,Anomaly,-0.01947
+ENT004397,Falcon PLC,FALCON,FR,,Private Company,Technology,Mining,Inactive,1983-06-20,2021-01-27,Issuer Feed,2020-03-26,2023-08-07,Anomaly,-0.01943
+ENT003252,Albion Technologies,ALBION TECHNOLOGIES,HK,,Private Company,Industrials,Software,Inactive,1992-02-27,2024-09-29,ProviderA,2024-05-14,2024-12-08,Anomaly,-0.01916
+ENT004809,Lagos Continental Energy,LAGOS CONTINENTAL ENERGY,DE,,Fund,Energy,Banking,Dissolved,2016-08-25,2021-06-28,Issuer Feed,2023-09-03,2024-06-07,Anomaly,-0.01914
+ENT000299,,,BR,,Private Company,Materials,Mining,Active,1985-10-02,2024-05-02,Manual Upload,2020-08-01,2024-05-15,Anomaly,-0.01906
+ENT004517,,,HK,HK-148295,Financial Institution,Real Estate,Mining,Inactive,2005-01-01,2018-10-25,Internal Master,2020-05-04,2023-09-02,Anomaly,-0.01832
+ENT003020,,,CH,CH-712609,Financial Institution,Real Estate,Private Equity,Inactive,2014-06-07,2024-09-10,ProviderA,2024-02-26,2025-01-28,Anomaly,-0.01701
+ENT004620,Horizon Technologies,HORIZON TECHNOLOGIES,AE,,Private Company,Telecommunications,Oil & Gas,Inactive,2002-07-20,2024-11-17,ProviderB,2022-08-30,2023-05-20,Anomaly,-0.01694
+ENT002642,PrimeEdge Investments,PRIMEEDGE INVESTMENTS,FR,FR-347375,Government Entity,Utilities,Retail,Unknown,1994-03-06,2015-11-19,ProviderA,2024-01-23,2025-01-24,Anomaly,-0.0167
+ENT004190,Granite Energy,GRANITE ENERGY,IN,,Fund,Utilities,Power Generation,Inactive,1987-04-07,2024-10-07,ProviderB,2021-04-01,2023-09-10,Anomaly,-0.01644
+ENT003456,Falcon Investments,FALCON INVESTMENTS,FR,,Financial Institution,Materials,Logistics,Dissolved,1997-10-05,2022-12-18,Issuer Feed,2022-08-16,2024-05-20,Anomaly,-0.01638
+ENT001981,Granite Services,GRANITE SERVICES,IE,,Financial Institution,Industrials,Retail,Inactive,1990-08-17,2022-08-25,KYC Platform,2024-01-19,2023-08-19,Anomaly,-0.01621
+ENT002962,Horizon Finance,HORIZON FINANCE,BR,,Fund,Telecommunications,Software,Active,1985-06-14,2021-08-23,ProviderB,2023-07-13,2023-08-20,Anomaly,-0.01615
+ENT003116,Lagos Continental Partners,LAGOS CONTINENTAL PARTNERS,NG,,Private Company,Energy,Banking,Inactive,2010-02-22,2022-04-21,ProviderB,2021-04-01,2023-12-19,Anomaly,-0.01606
+ENT003892,Silvergate Industries,SILVERGATE INDUSTRIES,BR,,Private Company,Real Estate,Logistics,Dissolved,2012-03-19,2024-05-07,ProviderB,2024-03-23,2023-08-24,Anomaly,-0.01568
+ENT004240,Falcon Industries,FALCON INDUSTRIES,IE,IE-739363,SPV,Consumer Goods,Pharmaceuticals,Merged,2004-10-18,2015-11-20,ProviderB,2023-10-09,2023-02-23,Anomaly,-0.01521
+ENT004701,Lagos Continental Finance,LAGOS CONTINENTAL FINANCE,GB,GB-673057,Financial Institution,Telecommunications,Oil & Gas,Dissolved,1983-02-01,2019-06-09,Internal Master,2021-06-22,2024-08-14,Anomaly,-0.01506
+ENT003218,Falcon Limited,FALCON,GB,,SPV,Industrials,Telecom Services,Merged,2001-12-03,2023-06-24,Issuer Feed,2023-08-06,2023-07-05,Anomaly,-0.01461
+ENT002963,Westbridge Ltd,WESTBRIDGE,GB,,Public Company,Industrials,Pharmaceuticals,Inactive,2010-01-23,2021-08-29,KYC Platform,2022-12-05,2023-12-07,Anomaly,-0.0146
+ENT002330,Crestline Energy,CRESTLINE ENERGY,HK,,Private Company,Energy,Banking,Dissolved,2003-06-08,2016-10-01,KYC Platform,2023-06-16,2023-05-05,Anomaly,-0.01399
+ENT004774,Northbridge Energy,NORTHBRIDGE ENERGY,NL,NL-378124,Public Company,Consumer Goods,Telecom Services,,1989-07-30,2016-08-04,ProviderB,2023-03-21,2023-11-13,Anomaly,-0.01391
+ENT002352,,,LU,LU-121202,Fund,Materials,Telecom Services,Inactive,1985-09-26,2024-05-06,ProviderB,2023-08-04,2024-03-28,Anomaly,-0.01371
+ENT002038,Helios Limited,HELIOS,BR,,Private Company,Healthcare,Logistics,Unknown,2007-04-15,2022-08-19,KYC Platform,2023-12-19,2023-01-09,Anomaly,-0.0137
+ENT002487,PrimeEdge Investments,PRIMEEDGE INVESTMENTS,XX,,Government Entity,Industrials,Private Equity,Dissolved,2004-06-16,2021-12-04,ProviderA,2020-12-12,2024-07-19,Anomaly,-0.01355
+ENT000039,Helios Holdings,HELIOS,LU,LU-850463,Public Company,Financials,Mining,Merged,1982-07-23,2015-08-30,KYC Platform,2022-05-29,2024-12-08,Anomaly,-0.0131
+ENT002693,,,LU,,Private Company,Materials,Power Generation,Active,1995-09-22,2022-08-09,ProviderB,2022-08-11,2024-01-24,Anomaly,-0.01297
+ENT004750,Westbridge Ltd,WESTBRIDGE,NL,,Private Company,Technology,Mining,Merged,2009-04-02,2022-08-21,ProviderA,2022-07-14,2023-08-29,Anomaly,-0.01287
+ENT002953,BluePeak PLC,BLUEPEAK,HK,HK-721884,Government Entity,Consumer Goods,Logistics,Dissolved,2014-09-24,2016-08-21,ProviderB,2022-10-23,2023-05-16,Anomaly,-0.01287
+ENT004603,Horizon Finance,HORIZON FINANCE,BR,,Private Company,Real Estate,Pharmaceuticals,Dissolved,2023-05-02,2021-11-18,ProviderB,2021-11-07,2024-07-02,Anomaly,-0.0126
+ENT000466,Meridian Industries,MERIDIAN INDUSTRIES,AE,AE-800396,Government Entity,Telecommunications,Oil & Gas,Inactive,2021-09-24,2015-01-24,Internal Master,2021-05-11,2024-11-21,Anomaly,-0.01201
+ENT004912,Sterling Energy,STERLING ENERGY,,NL-957370,Government Entity,Real Estate,Telecom Services,Unknown,1993-03-28,2024-07-16,ProviderB,2020-07-26,2024-04-23,Anomaly,-0.01197
+ENT002965,Atlas Holdings,ATLAS,LU,,Private Company,Telecommunications,Retail,Merged,1993-01-25,2024-04-16,ProviderB,2024-01-31,2024-10-05,Anomaly,-0.0119
+ENT004072,Crestline Industries,CRESTLINE INDUSTRIES,IE,,Financial Institution,Industrials,Software,Inactive,1985-09-07,2024-08-08,Manual Upload,2023-09-29,2023-02-09,Anomaly,-0.01178
+ENT001079,Lagos Continental Partners,LAGOS CONTINENTAL PARTNERS,BR,BR-684666,Fund,Technology,Oil & Gas,Merged,1982-06-19,2021-02-23,Internal Master,2022-01-22,2023-11-13,Anomaly,-0.01167
+ENT002537,,,ZA,ZA-831555,Financial Institution,Healthcare,Banking,Dissolved,2005-03-26,2024-12-20,Internal Master,2021-01-09,2024-02-09,Anomaly,-0.01154
+ENT002094,Nova PLC,NOVA,AE,AE-212859,Fund,Industrials,Oil & Gas,Unknown,1998-08-12,2015-02-01,Internal Master,2021-08-24,2023-12-18,Anomaly,-0.01146
+ENT002842,Summit Energy,SUMMIT ENERGY,SG,,Financial Institution,Materials,Oil & Gas,Unknown,1987-01-28,2024-04-06,KYC Platform,2022-10-05,2024-06-03,Anomaly,-0.01121
+ENT001671,Meridian Group,MERIDIAN,FR,,Private Company,Consumer Goods,Software,Merged,1996-01-12,2024-09-30,ProviderB,2022-04-10,2023-03-18,Anomaly,-0.01111
+ENT001671,Meridian Group,MERIDIAN,FR,,Private Company,Consumer Goods,Software,Merged,1996-01-12,2024-09-30,ProviderB,2022-04-10,2023-03-18,Anomaly,-0.01111
+ENT002071,Redwood Services,REDWOOD SERVICES,SG,,Public Company,Utilities,Power Generation,Unknown,1995-03-10,2024-07-29,KYC Platform,2023-09-12,2024-02-05,Anomaly,-0.01076
+ENT000404,Meridian Ltd,MERIDIAN,DE,,Fund,Energy,Pharmaceuticals,Unknown,1996-12-05,2021-05-05,Internal Master,2020-10-25,2024-08-24,Anomaly,-0.01057
+ENT002189,Cedar Holdings,CEDAR,DE,,Public Company,Energy,Pharmaceuticals,Inactive,1985-01-12,2024-03-24,ProviderB,2023-02-20,2024-06-19,Anomaly,-0.01056
+ENT000824,Helios Industries,HELIOS INDUSTRIES,BR,BR-758928,Financial Institution,Energy,Pharmaceuticals,Unknown,2018-05-04,2015-08-14,KYC Platform,2020-07-23,2024-04-29,Anomaly,-0.0104
+ENT001644,,,JP,JP-639823,Fund,Energy,Software,Inactive,1993-04-27,2024-01-29,Manual Upload,2024-02-16,2024-11-23,Anomaly,-0.01003
+ENT000483,Granite Partners,GRANITE PARTNERS,LU,LU-179568,Financial Institution,Utilities,Mining,Inactive,2014-04-05,2016-01-15,Internal Master,2023-10-19,2023-01-18,Anomaly,-0.00979
+ENT002002,Northbridge Energy,NORTHBRIDGE ENERGY,ZA,,Fund,Healthcare,Pharmaceuticals,Unknown,1992-11-19,2022-08-28,Issuer Feed,2023-08-05,2024-11-11,Anomaly,-0.00979
+ENT003522,Falcon Services,FALCON SERVICES,US,,Financial Institution,Healthcare,Power Generation,Inactive,1984-07-21,2021-09-06,ProviderB,2020-09-03,2024-08-16,Anomaly,-0.00972
+ENT004408,Lagos Continental Capital,LAGOS CONTINENTAL CAPITAL,LU,LU-157300,Government Entity,Consumer Goods,Private Equity,Dissolved,1989-11-21,2022-06-05,ProviderB,2020-02-15,2024-10-23,Anomaly,-0.00955
+ENT001717,Sterling Group,STERLING,ZA,,Financial Institution,Utilities,Logistics,Dissolved,2020-05-26,2021-12-13,Internal Master,2021-12-28,2024-05-06,Anomaly,-0.00905
+ENT003658,Westbridge Capital,WESTBRIDGE CAPITAL,IE,,Financial Institution,Utilities,Logistics,Dissolved,1996-07-12,2021-09-28,KYC Platform,2021-01-29,2024-01-06,Anomaly,-0.00905
+ENT002063,Frontier Technologies,FRONTIER TECHNOLOGIES,US,US-206449,,Real Estate,Software,Unknown,2002-09-19,2021-03-03,Manual Upload,2021-12-08,2023-08-25,Anomaly,-0.00899
+ENT000545,Horizon Ltd,HORIZON,CH,,Financial Institution,Energy,Mining,Unknown,2020-07-23,2023-01-15,ProviderA,2023-04-25,2023-08-10,Anomaly,-0.00889
+ENT000418,Silvergate Investments,SILVERGATE INVESTMENTS,GB,GB-857609,Public Company,Technology,Banking,Merged,2015-10-07,2023-01-22,ProviderA,2021-07-09,2023-07-23,Anomaly,-0.00872
+ENT001633,Meridian Partners,MERIDIAN PARTNERS,FR,,Private Company,Industrials,Mining,Merged,2011-09-27,2021-12-25,ProviderA,2020-07-16,2023-05-26,Anomaly,-0.00865
+ENT000078,Crestline Industries,CRESTLINE INDUSTRIES,JP,JP-583186,Public Company,Energy,Power Generation,Unknown,1980-02-06,2016-03-23,ProviderA,2020-08-21,2023-04-09,Anomaly,-0.00818
+ENT001660,Nova Limited,NOVA,AU,,Private Company,Materials,Private Equity,Unknown,2015-06-22,2023-10-26,ProviderA,2022-09-28,2023-11-26,Anomaly,-0.00806
+ENT000586,Falcon Partners,FALCON PARTNERS,,JP-369646,Government Entity,Healthcare,Oil & Gas,Inactive,2001-10-10,2022-12-21,Internal Master,2023-07-11,2023-02-16,Anomaly,-0.00801
+ENT003732,,,SG,SG-879634,Financial Institution,Energy,Oil & Gas,Merged,1985-01-24,2022-02-11,Manual Upload,2024-03-31,2024-02-20,Anomaly,-0.00793
+ENT003210,Union Ltd,UNION,BR,,Fund,Industrials,Power Generation,Active,2016-06-28,2021-11-01,Internal Master,2020-06-01,2024-07-12,Anomaly,-0.00777
+ENT004563,Northbridge Holdings,NORTHBRIDGE,US,US-483842,,Real Estate,Mining,Inactive,2012-05-12,2023-06-05,KYC Platform,2023-01-29,2024-10-12,Anomaly,-0.00773
+ENT002552,Nova Energy,NOVA ENERGY,BR,BR-477930,Public Company,Real Estate,Banking,Merged,2000-05-06,2022-08-20,ProviderA,2020-11-09,2024-04-15,Anomaly,-0.00747
+ENT003196,Redwood Capital,REDWOOD CAPITAL,FR,FR-537837,Public Company,Industrials,Pharmaceuticals,,2013-03-24,2024-03-25,KYC Platform,2022-01-11,2023-12-25,Anomaly,-0.00736
+ENT001420,Sterling Finance,STERLING FINANCE,IE,,SPV,Telecommunications,Private Equity,Unknown,2002-12-15,2021-03-13,Issuer Feed,2020-01-28,2023-12-29,Anomaly,-0.0071
+ENT002746,Lagos Continental Investments,LAGOS CONTINENTAL INVESTMENTS,LU,LU-749334,Government Entity,Real Estate,Mining,Unknown,1989-07-13,2021-11-27,KYC Platform,2022-05-03,2023-05-02,Anomaly,-0.00698
+ENT000414,Greenfield Services,GREENFIELD SERVICES,US,,Financial Institution,Materials,Retail,Unknown,1991-06-08,2021-09-19,ProviderB,2024-06-05,2024-07-13,Anomaly,-0.00651
+ENT002800,Redwood Investments,REDWOOD INVESTMENTS,AU,,Financial Institution,Financials,Oil & Gas,Unknown,1996-01-21,2022-09-09,Issuer Feed,2021-07-30,2024-01-13,Anomaly,-0.00649
+ENT000084,Helios PLC,HELIOS,NG,NG-260670,Government Entity,Energy,Power Generation,Inactive,2008-09-11,2019-12-31,KYC Platform,2020-08-11,2023-08-15,Anomaly,-0.00641
+ENT002372,Crestline Group,CRESTLINE,BR,BR-309072,Government Entity,Healthcare,Software,Unknown,1990-03-08,2021-04-19,KYC Platform,2021-02-13,2023-10-27,Anomaly,-0.00617
+ENT003735,Westbridge PLC,WESTBRIDGE,IN,,SPV,Industrials,Mining,Unknown,1999-03-12,2023-02-13,KYC Platform,2021-10-30,2024-03-23,Anomaly,-0.00612
+ENT003901,Crestline PLC,CRESTLINE,LU,LU-201808,Government Entity,Utilities,Pharmaceuticals,Dissolved,2006-03-16,2021-05-02,KYC Platform,2024-03-29,2023-12-23,Anomaly,-0.00588
+ENT000986,PrimeEdge Services,PRIMEEDGE SERVICES,FR,FR-705760,Government Entity,Healthcare,Power Generation,Dissolved,1985-01-05,2021-07-27,KYC Platform,2021-12-24,2023-08-25,Anomaly,-0.00552
+ENT003769,Sterling Industries,STERLING INDUSTRIES,BR,BR-250602,Public Company,Materials,Software,Merged,1981-04-23,2022-08-15,ProviderA,2020-01-06,2024-07-10,Anomaly,-0.00521
+ENT004936,Horizon PLC,HORIZON,,DE-103615,Private Company,Financials,Mining,Merged,1996-10-21,2017-12-24,Manual Upload,2023-04-02,2024-10-14,Anomaly,-0.00511
+ENT000199,Korefield PLC,KOREFIELD,,LU-715835,Public Company,Financials,Pharmaceuticals,Inactive,1988-04-03,2022-06-30,ProviderA,2024-03-12,2023-09-07,Anomaly,-0.00494
+ENT003883,Lagos Continental Industries,LAGOS CONTINENTAL INDUSTRIES,HK,,Private Company,Industrials,Mining,Merged,2003-12-17,2024-07-13,Manual Upload,2021-02-23,2024-07-01,Anomaly,-0.00488
+ENT000851,Nova PLC,NOVA,NG,NG-925767,Financial Institution,Technology,Software,Inactive,1984-07-22,2022-04-14,ProviderA,2023-12-01,2023-07-08,Anomaly,-0.00486
+ENT004174,Nova Group,NOVA,BR,,SPV,Healthcare,Software,Active,2009-07-03,2022-09-30,ProviderB,2023-12-06,2024-06-28,Anomaly,-0.00485
+ENT001632,Redwood Services,REDWOOD SERVICES,AU,AU-723208,SPV,Materials,Logistics,Unknown,1995-05-25,2017-12-01,Internal Master,2023-06-06,2023-05-25,Anomaly,-0.00461
+ENT001318,Atlas Limited,ATLAS,NG,NG-974731,Government Entity,Financials,Software,Merged,2021-10-29,2023-06-04,ProviderA,2023-06-04,2023-06-09,Anomaly,-0.0045
+ENT000590,Nova Limited,NOVA,BR,BR-716738,Public Company,Financials,Software,Merged,2005-02-06,2023-08-15,ProviderB,2024-01-21,2024-09-22,Anomaly,-0.0045
+ENT002722,,,SG,,SPV,Energy,Banking,Active,1990-11-01,2021-02-11,KYC Platform,2024-01-27,2024-12-11,Anomaly,-0.00446
+ENT001868,Helios PLC,HELIOS,FR,FR-630271,Government Entity,Materials,Retail,Unknown,1998-07-08,2022-10-29,KYC Platform,2021-01-06,2023-02-24,Anomaly,-0.00439
+ENT002698,Meridian Limited,MERIDIAN,,,Fund,Industrials,Logistics,Active,2017-02-03,2021-04-19,ProviderB,2022-05-06,2024-08-16,Anomaly,-0.00426
+ENT003437,Union Group,UNION,NL,NL-732580,Government Entity,Energy,Private Equity,Dissolved,1991-05-08,2024-08-08,KYC Platform,2020-11-18,2024-12-18,Anomaly,-0.00424
+ENT002913,Albion Technologies,ALBION TECHNOLOGIES,BR,BR-130524,Public Company,Telecommunications,Mining,Inactive,2000-12-08,2017-07-31,ProviderB,2020-09-19,2023-02-03,Anomaly,-0.00419
+ENT001389,Meridian Services,MERIDIAN SERVICES,NG,,SPV,Healthcare,Private Equity,Active,2019-12-18,2017-03-21,KYC Platform,2022-12-05,2025-01-03,Anomaly,-0.0041
+ENT002720,Crestline Technologies,CRESTLINE TECHNOLOGIES,,,Fund,Financials,Mining,Active,2007-12-29,2022-08-09,Issuer Feed,2022-04-16,2023-02-13,Anomaly,-0.0041
+ENT002942,PrimeEdge Holdings,PRIMEEDGE,AE,,Private Company,Healthcare,Mining,Unknown,2002-11-26,2022-02-25,ProviderA,2020-01-16,2024-06-09,Anomaly,-0.00366
+ENT002568,Redwood Ltd,REDWOOD,GB,GB-149918,Financial Institution,Energy,Mining,Merged,2001-01-31,2024-07-27,ProviderA,2021-07-22,2023-10-24,Anomaly,-0.00363
+ENT000348,Atlas Holdings,ATLAS,US,,Private Company,Industrials,Power Generation,Inactive,2027-08-17,2023-11-04,ProviderB,2022-10-15,2023-12-14,Anomaly,-0.00348
+ENT000245,Frontier Partners,FRONTIER PARTNERS,GB,GB-445185,Government Entity,Industrials,Power Generation,Merged,2016-02-24,2024-06-09,Internal Master,2022-09-24,2023-02-03,Anomaly,-0.00347
+ENT000590,Nova Limited,NOVA,BR,BR-716738,Public Company,Financials,Software,Merged,2005-02-06,2023-08-15,Internal Master,2024-01-21,2024-09-22,Anomaly,-0.00341
+ENT002753,Meridian Corporation,MERIDIAN,SG,,Financial Institution,Technology,Software,Dissolved,1985-01-04,2022-06-12,Manual Upload,2023-03-24,2023-11-20,Anomaly,-0.00328
+ENT002022,Redwood Ltd,REDWOOD,BR,,Fund,Consumer Goods,Private Equity,Active,1989-08-26,2023-07-20,Issuer Feed,2022-12-25,2024-10-30,Anomaly,-0.0032
+ENT004993,Nova Industries,NOVA INDUSTRIES,HK,,Private Company,Financials,Private Equity,Inactive,1997-01-25,2024-06-24,Internal Master,2022-03-28,2024-09-26,Anomaly,-0.0031
+ENT004390,Riverstone Partners,RIVERSTONE PARTNERS,AU,AU-793045,Public Company,Financials,Telecom Services,Inactive,1989-09-20,2016-08-02,Internal Master,2024-03-31,2024-05-26,Anomaly,-0.00296
+ENT000206,BluePeak Holdings,BLUEPEAK,US,,Private Company,Healthcare,Logistics,Merged,1995-11-11,2022-10-28,Manual Upload,2024-02-01,2024-07-31,Anomaly,-0.00294
+ENT000927,Lagos Continental PLC,LAGOS CONTINENTAL,BR,BR-462504,Government Entity,Consumer Goods,Logistics,Unknown,2006-08-18,2021-08-25,ProviderB,2020-03-29,2024-04-21,Anomaly,-0.00269
+ENT000927,Lagos Continental PLC,LAGOS CONTINENTAL,BR,BR-462504,Government Entity,Consumer Goods,Logistics,Unknown,2006-08-18,2021-08-25,ProviderB,2020-03-29,2024-04-21,Anomaly,-0.00269
+ENT003951,Atlas Capital,ATLAS CAPITAL,AU,AU-370973,Government Entity,Technology,Software,Inactive,2023-08-27,2024-06-27,ProviderA,2023-02-20,2023-05-07,Anomaly,-0.00268
+ENT003977,Westbridge Limited,WESTBRIDGE,GB,GB-592465,Public Company,Energy,Retail,Merged,1989-05-01,2018-12-08,KYC Platform,2022-08-04,2023-08-30,Anomaly,-0.00264
+ENT002513,Silvergate Ltd,SILVERGATE,ZZZ,LU-385535,Public Company,Telecommunications,Mining,Merged,2012-03-31,2022-04-13,Internal Master,2021-07-05,2024-05-04,Anomaly,-0.00259
+ENT001903,,,FR,FR-569103,Private Company,Technology,Banking,Dissolved,1998-06-28,2024-12-14,Manual Upload,2020-06-01,2024-05-04,Anomaly,-0.00252
+ENT000564,Silvergate Partners,SILVERGATE PARTNERS,CA,,SPV,Consumer Goods,Banking,Unknown,1981-09-20,2023-07-07,Issuer Feed,2023-04-18,2023-11-22,Anomaly,-0.00224
+ENT003959,Horizon Ltd,HORIZON,US,US-820054,,Healthcare,Retail,Running,1996-05-18,2022-09-03,KYC Platform,2021-01-22,2024-10-07,Anomaly,-0.00201
+ENT003345,Greenfield Technologies,GREENFIELD TECHNOLOGIES,IE,,Private Company,Technology,Power Generation,Unknown,1990-10-01,2022-04-16,KYC Platform,2021-08-24,2023-12-15,Anomaly,-0.00193
+ENT000505,Redwood Technologies,REDWOOD TECHNOLOGIES,AE,,SPV,Energy,Power Generation,Active,1981-11-05,2016-05-05,Issuer Feed,2023-11-05,2023-10-18,Anomaly,-0.00192
+ENT001997,,,GB,GB-612811,Public Company,Materials,Banking,Unknown,1996-03-22,2024-07-19,ProviderB,2021-08-25,2023-01-09,Anomaly,-0.00192
+ENT001027,Summit Finance,SUMMIT FINANCE,BR,BR-160462,Government Entity,Real Estate,Logistics,Inactive,2020-03-28,2021-11-23,KYC Platform,2020-04-17,2024-01-16,Anomaly,-0.0019
+ENT001988,Atlas Industries,ATLAS INDUSTRIES,HK,HK-924049,Private Company,Real Estate,Mining,Merged,1983-05-13,2015-08-11,ProviderA,2021-03-08,2024-02-07,Anomaly,-0.00186
+ENT000838,Greenfield Finance,GREENFIELD FINANCE,,NG-634273,Public Company,Technology,Banking,Dissolved,1990-02-25,2022-01-11,Internal Master,2021-04-04,2023-02-01,Anomaly,-0.00163
+ENT001737,Redwood Services,REDWOOD SERVICES,NG,,Private Company,Energy,Software,Unknown,1986-12-28,2021-06-12,KYC Platform,2023-06-12,2023-11-26,Anomaly,-0.00159
+ENT001673,Meridian Investments,MERIDIAN INVESTMENTS,,,Private,Telecommunications,Power Generation,Active,2001-10-16,2023-06-11,ProviderB,2024-06-25,2024-07-28,Anomaly,-0.00153
+ENT001251,Greenfield Ltd,GREENFIELD,JP,JP-721593,SPV,Consumer Goods,Retail,,1985-10-06,2024-11-23,ProviderB,2023-04-21,2024-06-10,Anomaly,-0.00143
+ENT000235,BluePeak Finance,BLUEPEAK FINANCE,AU,AU-599057,Government Entity,Industrials,Telecom Services,Inactive,1989-02-27,2024-06-21,ProviderB,2022-07-31,2024-08-08,Anomaly,-0.00131
+ENT004527,,,DE,DE-123568,Financial Institution,Industrials,Retail,Unknown,1992-09-09,2022-08-08,Internal Master,2024-01-18,2023-07-28,Anomaly,-0.00117
+ENT003976,Falcon PLC,FALCON,,US-699718,Public Company,Energy,Retail,Inactive,1992-06-23,2024-02-02,Manual Upload,2022-11-08,2024-07-24,Anomaly,-0.00113
+ENT002974,Nova Finance,NOVA FINANCE,FR,FR-164176,Government Entity,Utilities,Private Equity,Dissolved,2006-10-26,2024-03-23,Internal Master,2021-06-01,2023-10-24,Anomaly,-0.0009
+ENT004753,Northbridge Capital,NORTHBRIDGE CAPITAL,GB,GB-869345,SPV,Energy,Power Generation,Unknown,1998-06-22,2017-08-30,Issuer Feed,2020-07-16,2024-07-18,Anomaly,-0.00089
+ENT001848,Summit Partners,SUMMIT PARTNERS,CA,CA-446050,Government Entity,Healthcare,Retail,Dissolved,2013-12-23,2021-04-04,KYC Platform,2020-09-27,2024-01-18,Anomaly,-0.00081
+ENT001016,,,AE,AE-481934,Private Company,Industrials,Pharmaceuticals,Merged,1985-10-08,2022-12-14,Internal Master,2021-11-21,2023-10-22,Anomaly,-0.0008
+ENT003656,Silvergate Ltd,SILVERGATE,JP,JP-100615,Public Company,Financials,Private Equity,Merged,2018-04-07,2016-04-06,Issuer Feed,2023-09-03,2023-06-04,Anomaly,-0.00074
+ENT004199,Horizon PLC,HORIZON,AU,AU-286617,Government Entity,Utilities,Software,Inactive,1984-03-28,2021-09-28,ProviderB,2022-09-23,2024-04-07,Anomaly,-0.00055
+ENT003857,Summit Corporation,SUMMIT,GB,,Private Company,Materials,Telecom Services,Inactive,2009-12-24,2022-07-08,Issuer Feed,2022-01-31,2023-11-25,Anomaly,-0.00048
+ENT004306,Sterling Ltd,STERLING,LU,LU-616779,Fund,Technology,Oil & Gas,Dissolved,1997-10-29,2022-05-31,KYC Platform,2024-03-15,2023-04-01,Anomaly,-0.00047
+ENT003223,Northbridge Investments,NORTHBRIDGE INVESTMENTS,AE,AE-120007,Public Company,Healthcare,Private Equity,Merged,2013-08-05,2021-04-09,KYC Platform,2020-10-03,2024-06-04,Anomaly,-0.00047
+ENT003013,Albion Investments,ALBION INVESTMENTS,HK,,Private Company,Consumer Goods,Telecom Services,Unknown,2012-08-23,2022-04-29,ProviderA,2020-03-09,2024-12-29,Anomaly,-0.0003
+ENT001435,Silvergate PLC,SILVERGATE,FR,FR-335147,Government Entity,Materials,Software,Inactive,1982-05-01,2021-09-22,KYC Platform,2022-02-05,2024-09-03,Anomaly,-0.00029
+ENT003673,Redwood Group,REDWOOD,FR,,Government Entity,Consumer Goods,Banking,Active,2014-08-15,2024-05-08,Manual Upload,2021-11-11,2024-03-06,Anomaly,-6e-05

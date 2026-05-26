@@ -1,0 +1,8 @@
+pandas
+numpy
+scikit-learn
+pytest
+streamlit
+plotly
+duckdb
+tabulate

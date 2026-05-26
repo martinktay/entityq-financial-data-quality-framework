@@ -1,0 +1,19 @@
+table_name,dimension,rule_count,total_records_checked,total_failed_records,average_pass_rate,quality_score,status
+entities,Completeness,3,15300,185,0.9879000000000001,98.79,Good
+entities,Timeliness,1,5100,3611,0.292,29.2,Needs Attention
+entities,Uniqueness,1,5100,200,0.9608,96.08,Good
+entities,Validity,4,20400,305,0.98505,98.5,Good
+entity_hierarchy,Hierarchy Integrity,1,2020,61,0.9698,96.98,Good
+entity_hierarchy,Referential Integrity,2,4040,49,0.98785,98.78,Good
+entity_hierarchy,Validity,2,4040,291,0.92795,92.8,Good
+issuers,Completeness,2,3030,92,0.96965,96.96,Good
+issuers,Referential Integrity,1,1515,26,0.9828,98.28,Good
+issuers,Uniqueness,1,1515,30,0.9802,98.02,Good
+issuers,Validity,1,1515,54,0.9644,96.44,Good
+kyc_attributes,Referential Integrity,1,4250,64,0.9849,98.49,Good
+kyc_attributes,Timeliness,2,8500,3870,0.5447,54.47,Needs Attention
+kyc_attributes,Validity,1,4250,204,0.952,95.2,Good
+provider_feed,Completeness,1,3857,78,0.9798,97.98,Good
+provider_feed,Consistency,1,3857,0,1.0,100.0,Good
+provider_feed,Uniqueness,1,3857,114,0.9704,97.04,Good
+provider_feed,Validity,1,3857,564,0.8538,85.38,Monitor
