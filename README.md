@@ -181,20 +181,15 @@ entityq-financial-data-quality-framework/
   notebooks/
   dags/
   dbt/
+```
 
-  ## Architecture
+## Architecture
 
 EntityQ is designed as an end-to-end financial entity data quality and automation framework. It simulates financial reference data workflows involving legal entities, issuers, corporate hierarchies, KYC attributes, counterparty risk records, private markets-style entity data and third-party provider feeds.
 
 ```mermaid
 flowchart TD
     A[Synthetic Financial Entity Data] --> B[Python Data Generation]
-    B --> C[Raw Datasets]
-
-    C --> D[Data Profiling]
-    C --> E[Validation Rules]
-    C --> F[Quality Metrics]
-    C --> G Data Generation]
     B --> C[Raw Datasets]
 
     C --> D[Data Profiling]
