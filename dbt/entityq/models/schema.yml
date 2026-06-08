@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: stg_entities
+    description: "Staged entity master records from the raw synthetic entity dataset."
+    columns:
+      - name: entity_id
+        description: "Internal entity identifier."
+        tests:
+          - not_null
+
+      - name: legal_name
+        description: "Registered legal name of the entity."
+
+      - name: country_code
+        description: "Country code associated with the entity."
+
+      - name: entity_type
+        description: "Entity classification."
+
+  - name: stg_issuers
+    description: "Staged issuer records linked to entity master data."
+    columns:
+      - name: issuer_id
+        description: "Internal issuer identifier."
+        tests:
+          - not_null
+
+      - name: entity_id
+        description: "Entity identifier used to link issuer records to entity master data."
+
+  - name: stg_entity_hierarchy
+    description: "Staged corporate hierarchy data containing parent-child entity relationships."
+
+  - name: stg_kyc_attributes
+    description: "Staged KYC and counterparty risk attributes."
+    columns:
+      - name: entity_id
+        description: "Entity identifier linked to entity master data."
+        tests:
+          - not_null
+
+      - name: risk_rating
+        description: "Risk rating assigned to the entity."
+
+  - name: stg_provider_feed
+    description: "Staged third-party provider feed records."
+
+  - name: mart_entity_quality_summary
+    description: "Source-system-level entity data quality summary."
+
+  - name: mart_quality_exceptions
+    description: "Consolidated quality exceptions across entity, issuer and KYC datasets."

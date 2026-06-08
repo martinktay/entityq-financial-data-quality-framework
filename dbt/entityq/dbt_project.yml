@@ -1,0 +1,14 @@
+name: "entityq"
+version: "1.0.0"
+config-version: 2
+
+profile: "entityq"
+
+model-paths: ["models"]
+
+models:
+  entityq:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

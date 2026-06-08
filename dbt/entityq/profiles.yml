@@ -1,0 +1,7 @@
+entityq:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../../data/processed/entityq.duckdb"
+      threads: 4

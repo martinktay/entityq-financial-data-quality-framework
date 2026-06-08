@@ -10,8 +10,8 @@ The objective is to provide transparent quality metrics, identify material data 
 
 - Tables checked: **5**
 - Rules executed: **27**
-- Average table quality score: **90.41%**
-- Total failed record checks: **9,798**
+- Average table quality score: **90.39%**
+- Total failed record checks: **9,834**
 
 ## Table-Level Quality Summary
 
@@ -20,7 +20,7 @@ The objective is to provide transparent quality metrics, identify material data 
 | entities         |                    4 |             9 |                   4301 |                   80.64 | Monitor  |
 | entity_hierarchy |                    3 |             5 |                    401 |                   96.19 | Good     |
 | issuers          |                    4 |             5 |                    202 |                   97.42 | Good     |
-| kyc_attributes   |                    3 |             4 |                   4138 |                   82.72 | Monitor  |
+| kyc_attributes   |                    3 |             4 |                   4174 |                   82.58 | Monitor  |
 | provider_feed    |                    4 |             4 |                    756 |                   95.1  | Good     |
 
 ## Lowest-Scoring Tables
@@ -28,7 +28,7 @@ The objective is to provide transparent quality metrics, identify material data 
 | table_name       |   dimensions_checked |   total_rules |   total_failed_records |   overall_quality_score | status   |
 |:-----------------|---------------------:|--------------:|-----------------------:|------------------------:|:---------|
 | entities         |                    4 |             9 |                   4301 |                   80.64 | Monitor  |
-| kyc_attributes   |                    3 |             4 |                   4138 |                   82.72 | Monitor  |
+| kyc_attributes   |                    3 |             4 |                   4174 |                   82.58 | Monitor  |
 | provider_feed    |                    4 |             4 |                    756 |                   95.1  | Good     |
 | entity_hierarchy |                    3 |             5 |                    401 |                   96.19 | Good     |
 | issuers          |                    4 |             5 |                    202 |                   97.42 | Good     |
@@ -49,7 +49,7 @@ The objective is to provide transparent quality metrics, identify material data 
 | issuers          | Uniqueness            |            1 |                    1515 |                     30 |             0.9802  |           98.02 | Good            |
 | issuers          | Validity              |            1 |                    1515 |                     54 |             0.9644  |           96.44 | Good            |
 | kyc_attributes   | Referential Integrity |            1 |                    4250 |                     64 |             0.9849  |           98.49 | Good            |
-| kyc_attributes   | Timeliness            |            2 |                    8500 |                   3870 |             0.5447  |           54.47 | Needs Attention |
+| kyc_attributes   | Timeliness            |            2 |                    8500 |                   3906 |             0.54045 |           54.04 | Needs Attention |
 | kyc_attributes   | Validity              |            1 |                    4250 |                    204 |             0.952   |           95.2  | Good            |
 | provider_feed    | Completeness          |            1 |                    3857 |                     78 |             0.9798  |           97.98 | Good            |
 | provider_feed    | Consistency           |            1 |                    3857 |                      0 |             1       |          100    | Good            |
@@ -61,7 +61,7 @@ The objective is to provide transparent quality metrics, identify material data 
 | table_name       | rule_id   | dimension    | severity   | description                                                                      |   failed_count |   pass_rate | recommendation                                                    |
 |:-----------------|:----------|:-------------|:-----------|:---------------------------------------------------------------------------------|---------------:|------------:|:------------------------------------------------------------------|
 | entities         | ENT-008   | Timeliness   | Medium     | active entity records should be verified within the last 365 days.               |           3611 |      0.292  | Prioritise stale active entities for review.                      |
-| kyc_attributes   | KYC-004   | Timeliness   | High       | next_review_due_date should not be overdue.                                      |           2661 |      0.3739 | Trigger remediation workflow for overdue KYC reviews.             |
+| kyc_attributes   | KYC-004   | Timeliness   | High       | next_review_due_date should not be overdue.                                      |           2697 |      0.3654 | Trigger remediation workflow for overdue KYC reviews.             |
 | kyc_attributes   | KYC-003   | Timeliness   | Critical   | High and Critical risk counterparties should have been reviewed within 365 days. |           1209 |      0.7155 | Prioritise stale high-risk counterparties for review.             |
 | provider_feed    | PRV-003   | Validity     | Medium     | confidence_score must be between 0 and 1.                                        |            564 |      0.8538 | Standardise provider confidence scores and reject invalid values. |
 | entity_hierarchy | HIER-004  | Validity     | High       | ownership_percentage must be between 0 and 100.                                  |            270 |      0.8663 | Review ownership percentages outside the valid range.             |

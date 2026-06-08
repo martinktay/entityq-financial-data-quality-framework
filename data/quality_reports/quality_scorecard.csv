@@ -11,7 +11,7 @@ issuers,Referential Integrity,1,1515,26,0.9828,98.28,Good
 issuers,Uniqueness,1,1515,30,0.9802,98.02,Good
 issuers,Validity,1,1515,54,0.9644,96.44,Good
 kyc_attributes,Referential Integrity,1,4250,64,0.9849,98.49,Good
-kyc_attributes,Timeliness,2,8500,3870,0.5447,54.47,Needs Attention
+kyc_attributes,Timeliness,2,8500,3906,0.54045,54.04,Needs Attention
 kyc_attributes,Validity,1,4250,204,0.952,95.2,Good
 provider_feed,Completeness,1,3857,78,0.9798,97.98,Good
 provider_feed,Consistency,1,3857,0,1.0,100.0,Good
