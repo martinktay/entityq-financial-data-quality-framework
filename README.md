@@ -181,3 +181,126 @@ entityq-financial-data-quality-framework/
   notebooks/
   dags/
   dbt/
+
+  ## Architecture
+
+EntityQ is designed as an end-to-end financial entity data quality and automation framework. It simulates financial reference data workflows involving legal entities, issuers, corporate hierarchies, KYC attributes, counterparty risk records, private markets-style entity data and third-party provider feeds.
+
+```mermaid
+flowchart TD
+    A[Synthetic Financial Entity Data] --> B[Python Data Generation]
+    B --> C[Raw Datasets]
+
+    C --> D[Data Profiling]
+    C --> E[Validation Rules]
+    C --> F[Quality Metrics]
+    C --> G Data Generation]
+    B --> C[Raw Datasets]
+
+    C --> D[Data Profiling]
+    C --> E[Validation Rules]
+    C --> F[Quality Metrics]
+    C --> G[AI/ML Anomaly Detection]
+
+    D --> H[Quality Reports]
+    E --> H
+    F --> H
+    G --> H
+
+    H --> I[Stakeholder Report]
+    H --> J[Streamlit Dashboard]
+    H --> K[FastAPI Quality Endpoints]
+
+    C --> L[dbt / DuckDB Models]
+    L --> M[Staging Models]
+    L --> N[Quality Marts]
+    N --> K
+
+    C --> O[Kafka Producer]
+    O --> P[provider-feed-raw Topic]
+    P --> Q[Kafka Consumer]
+    Q --> R[Kafka Provider Quality Reports]
+
+    R --> H
+
+    Q --> S[Iceberg Curated Table Layer]
+    S --> T[Trino SQL Access Layer]
+    T --> U[Superset BI Dashboards]
+```
+
+## Implemented Locally
+
+EntityQ currently includes:
+
+* synthetic financial entity data generation
+* data profiling and validation rules
+* data quality metrics and scorecards
+* root-cause-oriented failed rule outputs
+* AI/ML-enabled anomaly detection
+* stakeholder-ready markdown reporting
+* dbt and DuckDB staging and mart models
+* FastAPI endpoints for quality outputs
+* Streamlit dashboard layer
+* Airflow orchestration design
+* GitHub Actions CI design
+* local Kafka provider-feed ingestion with producer and consumer scripts
+* local Trino lab for distributed SQL exploration
+* local Apache Iceberg lab using Spark, REST Catalog and MinIO
+* local Superset lab for BI/dashboarding exploration
+
+## Modern Data Stack Extension
+
+The local project is designed to map into a production-style modern data stack:
+
+```mermaid
+flowchart LR
+    A[Third-Party Provider Feeds] --> B[Kafka Topics]
+    B --> C[Event-Level Validation]
+    C --> D[Raw Landing Layer]
+    D --> E[dbt Transformations]
+    E --> F[Iceberg Curated Tables]
+    F --> G[Trino SQL Layer]
+    G --> H[Superset Dashboards]
+    H --> I[Stakeholder Review and Remediation]
+```
+
+## Data Quality Workflow
+
+EntityQ follows a practical data quality workflow:
+
+```mermaid
+flowchart TD
+    A[Ingest Data] --> B[Profile Data]
+    B --> C[Apply Validation Rules]
+    C --> D[Measure Quality Metrics]
+    D --> E[Identify Failed Rules]
+    E --> F[Run Anomaly Detection]
+    F --> G[Create Quality Scorecards]
+    G --> H[Generate Stakeholder Report]
+    H --> I[Expose Results via API and Dashboards]
+    I --> J[Support Remediation and Governance]
+```
+
+## Role Alignment
+
+This project demonstrates practical experience across:
+
+* data quality strategy
+* data quality metrics
+* data profiling
+* root-cause investigation
+* quality-by-design workflows
+* Python and SQL automation
+* PySpark-style data engineering patterns
+* ETL validation and regression testing
+* reference data and entity data quality
+* issuer and corporate hierarchy data checks
+* KYC and counterparty risk awareness
+* third-party provider feed validation
+* Kafka event ingestion
+* dbt/DuckDB modelling
+* Iceberg-style curated table architecture
+* Trino SQL access patterns
+* Superset-style stakeholder reporting
+* FastAPI access to quality outputs
+* workflow automation and CI/CD awareness
