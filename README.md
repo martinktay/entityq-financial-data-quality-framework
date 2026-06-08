@@ -127,6 +127,14 @@ Generated outputs:
 - `data/quality_reports/kafka_provider_failed_events.csv`
 - `data/streaming/kafka_provider_consumed_events.jsonl`
 
+### 6. Launch the Streamlit dashboard
+
+```bash
+streamlit run dashboards/streamlit_app.py
+```
+
+The dashboard reads its source data from `data/quality_reports/`. If the pipeline has not been executed yet, the app will display informative warnings instead of failing.
+
 ## API Endpoints
 
 The FastAPI service exposes:
