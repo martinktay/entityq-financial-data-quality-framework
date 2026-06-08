@@ -1,42 +1,44 @@
 # EntityQ: Financial Entity Data Quality & Automation Framework
+
 ![EntityQ Tests](https://github.com/martinktay/entityq-financial-data-quality-framework/actions/workflows/tests.yml/badge.svg)
 
-EntityQ is a financial entity data quality and automation framework built to simulate the type of reference, issuer, hierarchy, KYC, counterparty risk and third-party provider data challenges handled by large financial data organisations.
-
-The project generates realistic synthetic financial entity datasets, deliberately injects data quality issues, profiles the data, validates quality rules, calculates quality scorecards, detects anomalies and produces stakeholder-ready reports.
+EntityQ is a reference data quality framework for financial entity and provider data. It generates synthetic raw datasets, injects realistic data quality issues, profiles records, validates rules, surfaces anomalies, and exposes quality outputs through reports, APIs, and modern analytics tooling.
 
 ## Business Problem
 
-Financial data teams rely on accurate entity and reference data for workflows such as:
+Financial institutions depend on clean reference data for entity onboarding, counterparty risk, sanctions screening, issuer mapping, corporate hierarchy analysis, and downstream reporting.
 
-- client onboarding
-- KYC review
-- counterparty risk
-- issuer classification
-- corporate hierarchy analysis
-- private markets research
-- third-party provider data integration
+Common data quality failures include:
 
-Poor data quality can lead to duplicated entities, broken issuer relationships, stale risk reviews, missing identifiers, incorrect classifications and unreliable reporting.
+- missing or stale identifiers
+- invalid country or classification codes
+- broken issuer relationships and hierarchy chains
+- duplicate or inconsistent entity records
+- provider feed mismatches and poor supplier data quality
+- noisy risk and KYC attributes
 
-EntityQ demonstrates how data quality controls can be embedded into a repeatable pipeline instead of being handled through manual checks.
+EntityQ demonstrates an end-to-end approach for surfacing those issues, measuring quality, and making remediation insights repeatable and auditable.
 
-## What the Project Does
+## Solution Overview
 
-EntityQ performs the following steps:
+The framework combines synthetic data generation, profiling, validation, anomaly detection, reporting, API access, dbt/DuckDB marts, and Kafka streaming validation to simulate a modern financial data quality pipeline.
 
-1. Generates synthetic messy financial entity data.
-2. Profiles each dataset for missingness, uniqueness, data types and top values.
-3. Runs validation rules across key data quality dimensions.
-4. Produces rule-level validation results.
-5. Aggregates rule results into quality scorecards.
-6. Runs anomaly detection on entity records.
-7. Produces a stakeholder-facing markdown report.
-8. Provides SQL examples for schema design, quality checks and stakeholder views.
+## Core Capabilities
+
+- synthetic financial entity and provider feed data generation
+- controlled injection of realistic data quality issues
+- dataset profiling and reporting
+- rule-based validation across completeness, uniqueness, validity, consistency, hierarchy, and referential integrity
+- anomaly detection for entity records
+- quality scorecards and stakeholder-ready markdown reporting
+- FastAPI endpoints for quality summaries and failed rule analysis
+- dbt/DuckDB model access for quality marts
+- Kafka producer/consumer flows for provider feed validation
+- Streamlit dashboard support and SQL examples
 
 ## Datasets
 
-The project generates five synthetic raw datasets:
+The established synthetic source datasets include:
 
 | Dataset | Description |
 |---|---|
@@ -44,11 +46,11 @@ The project generates five synthetic raw datasets:
 | `issuers.csv` | Issuer records linked to entities |
 | `entity_hierarchy.csv` | Parent-child corporate hierarchy records |
 | `kyc_attributes.csv` | KYC, risk and counterparty attributes |
-| `provider_feed.csv` | Third-party reference data provider feed |
+| `provider_feed.csv` | Third-party provider reference feed |
 
 ## Data Quality Dimensions
 
-EntityQ measures quality across:
+EntityQ evaluates data quality across:
 
 - Completeness
 - Validity
@@ -59,83 +61,62 @@ EntityQ measures quality across:
 - Hierarchy Integrity
 - Anomaly Detection
 
-## Key Features
-
-- Synthetic financial entity/reference data generation
-- Realistic messy data injection
-- Data profiling
-- Rule-based data quality validation
-- Quality scorecards
-- Stakeholder reporting
-- AI/ML-enabled anomaly detection
-- SQL quality checks
-- SQL stakeholder views
-- FastAPI REST API for data quality summaries and DuckDB mart access
-- Kafka provider feed producer/consumer for streaming quality validation
-- Pytest smoke tests
-
-## Tools Used
-
-- Python
-- Pandas
-- NumPy
-- scikit-learn
-- SQL
-- Pytest
-- FastAPI
-- Uvicorn
-- Confluent Kafka
-- Markdown
-- DuckDB-ready SQL design
-- Streamlit-ready reporting extension
-
 ## Getting Started
 
-1. Install dependencies:
+### 1. Install dependencies
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-2. Run the full EntityQ pipeline:
+It is recommended to run this in a virtual environment using Python 3.10+.
+
+### 2. Execute the pipeline
 
 ```bash
 python -m entityq.run_pipeline
 ```
 
-   This creates synthetic raw datasets and quality reports under `data/raw` and `data/quality_reports`.
+This generates:
 
-3. Start the API service:
+- `data/raw/*.csv`
+- `data/quality_reports/*.csv`
+- `data/quality_reports/stakeholder_report.md`
+
+### 3. Run the API
 
 ```bash
 uvicorn entityq.api:app --reload --host 127.0.0.1 --port 8000
 ```
 
-   To enable the `/dbt/entity-quality-summary` endpoint, run dbt in `dbt/entityq` first:
+### 4. Build the dbt/DuckDB mart
+
+To enable the `/dbt/entity-quality-summary` endpoint, run dbt from `dbt/entityq`:
 
 ```bash
 cd dbt/entityq
 dbt run --profiles-dir .
 ```
 
-4. Optionally publish provider feed events to Kafka:
+### 5. Kafka provider feed validation
+
+Publish synthetic provider feed events to Kafka:
 
 ```bash
 python -m entityq.kafka_provider_producer
 ```
 
-   Requires a local Kafka broker at `localhost:9092` by default.
-
-5. Optionally consume provider events and produce Kafka quality reports:
+Consume the latest run and produce Kafka quality reports:
 
 ```bash
 python -m entityq.kafka_provider_consumer
 ```
 
-   This writes:
-   - `data/quality_reports/kafka_provider_quality_summary.csv`
-   - `data/quality_reports/kafka_provider_failed_events.csv`
-   - `data/streaming/kafka_provider_consumed_events.jsonl`
+This generates:
+
+- `data/quality_reports/kafka_provider_quality_summary.csv`
+- `data/quality_reports/kafka_provider_failed_events.csv`
+- `data/streaming/kafka_provider_consumed_events.jsonl`
 
 ## API Endpoints
 
@@ -147,7 +128,10 @@ python -m entityq.kafka_provider_consumer
 - `GET /quality/stakeholder-report`
 - `GET /dbt/entity-quality-summary`
 
-`/quality/failed-rules` supports `severity` and `limit` query parameters.
+`/quality/failed-rules` supports optional query parameters:
+
+- `severity`
+- `limit`
 
 ## Project Structure
 
@@ -183,9 +167,28 @@ entityq-financial-data-quality-framework/
   dbt/
 ```
 
+## Dependencies
+
+Primary libraries used by the project:
+
+- Python 3.10+
+- pandas
+- numpy
+- scikit-learn
+- duckdb
+- dbt-core
+- dbt-duckdb
+- fastapi
+- uvicorn
+- confluent-kafka
+- streamlit
+- plotly
+- pytest
+- tabulate
+
 ## Architecture
 
-EntityQ is designed as an end-to-end financial entity data quality and automation framework. It simulates financial reference data workflows involving legal entities, issuers, corporate hierarchies, KYC attributes, counterparty risk records, private markets-style entity data and third-party provider feeds.
+EntityQ is designed as an end-to-end entity data quality and automation framework. It simulates financial data workflows around legal entities, issuers, corporate hierarchies, KYC attributes, counterparty risk, and provider feed validation.
 
 ```mermaid
 flowchart TD
@@ -223,79 +226,18 @@ flowchart TD
     T --> U[Superset BI Dashboards]
 ```
 
-## Implemented Locally
+## Additional Project Capabilities
 
-EntityQ currently includes:
+The repository also supports:
 
-* synthetic financial entity data generation
-* data profiling and validation rules
-* data quality metrics and scorecards
-* root-cause-oriented failed rule outputs
-* AI/ML-enabled anomaly detection
-* stakeholder-ready markdown reporting
-* dbt and DuckDB staging and mart models
-* FastAPI endpoints for quality outputs
-* Streamlit dashboard layer
-* Airflow orchestration design
-* GitHub Actions CI design
-* local Kafka provider-feed ingestion with producer and consumer scripts
-* local Trino lab for distributed SQL exploration
-* local Apache Iceberg lab using Spark, REST Catalog and MinIO
-* local Superset lab for BI/dashboarding exploration
+- dbt and DuckDB modeling for quality marts
+- Streamlit dashboarding
+- Airflow orchestration design patterns
+- GitHub Actions CI design
+- Kafka provider-feed ingestion and validation
+- Trino and Iceberg lab design references
+- Superset-style BI exploration
 
-## Modern Data Stack Extension
+## Professional Notes
 
-The local project is designed to map into a production-style modern data stack:
-
-```mermaid
-flowchart LR
-    A[Third-Party Provider Feeds] --> B[Kafka Topics]
-    B --> C[Event-Level Validation]
-    C --> D[Raw Landing Layer]
-    D --> E[dbt Transformations]
-    E --> F[Iceberg Curated Tables]
-    F --> G[Trino SQL Layer]
-    G --> H[Superset Dashboards]
-    H --> I[Stakeholder Review and Remediation]
-```
-
-## Data Quality Workflow
-
-EntityQ follows a practical data quality workflow:
-
-```mermaid
-flowchart TD
-    A[Ingest Data] --> B[Profile Data]
-    B --> C[Apply Validation Rules]
-    C --> D[Measure Quality Metrics]
-    D --> E[Identify Failed Rules]
-    E --> F[Run Anomaly Detection]
-    F --> G[Create Quality Scorecards]
-    G --> H[Generate Stakeholder Report]
-    H --> I[Expose Results via API and Dashboards]
-    I --> J[Support Remediation and Governance]
-```
-
-## Role Alignment
-
-This project demonstrates practical experience across:
-
-* data quality strategy
-* data quality metrics
-* data profiling
-* root-cause investigation
-* quality-by-design workflows
-* Python and SQL automation
-* PySpark-style data engineering patterns
-* ETL validation and regression testing
-* reference data and entity data quality
-* issuer and corporate hierarchy data checks
-* KYC and counterparty risk awareness
-* third-party provider feed validation
-* Kafka event ingestion
-* dbt/DuckDB modelling
-* Iceberg-style curated table architecture
-* Trino SQL access patterns
-* Superset-style stakeholder reporting
-* FastAPI access to quality outputs
-* workflow automation and CI/CD awareness
+This README is intended to reflect the current codebase and the latest functionality present in the repository. It is structured to help technical reviewers and stakeholders understand the project purpose, the data quality use case, the implementation parts, and the tools required to run the solution.
