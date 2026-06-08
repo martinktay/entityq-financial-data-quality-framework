@@ -1,0 +1,91 @@
+datasets:
+  counterparty_trade_links:
+    description: "Synthetic dirty trade-linked counterparty reference dataset for testing financial data quality onboarding."
+    file_path: "data/incoming/counterparty_trade_links.csv"
+    primary_key: "trade_id"
+
+    required_columns:
+      - trade_id
+      - counterparty_entity_id
+      - counterparty_name
+      - issuer_id
+      - issuer_name
+      - instrument_type
+      - instrument_id
+      - isin
+      - trade_date
+      - settlement_date
+      - notional_amount
+      - currency
+      - risk_country
+      - booking_country
+      - exchange_mic
+      - kyc_status
+      - counterparty_risk_rating
+      - lei
+      - sector
+      - source_system
+      - provider_name
+      - provider_confidence_score
+      - ingestion_timestamp
+      - last_verified_date
+
+    date_columns:
+      - trade_date
+      - settlement_date
+      - ingestion_timestamp
+      - last_verified_date
+
+    numeric_columns:
+      - notional_amount
+      - provider_confidence_score
+
+    allowed_values:
+      currency:
+        - USD
+        - GBP
+        - EUR
+        - NGN
+        - JPY
+        - CHF
+        - CAD
+        - AUD
+
+      kyc_status:
+        - Approved
+        - Pending
+        - Rejected
+        - Expired
+
+      counterparty_risk_rating:
+        - Low
+        - Medium
+        - High
+
+      instrument_type:
+        - Equity
+        - Bond
+        - Fund
+        - Private Credit
+        - Private Equity
+        - Derivative
+
+      country_code:
+        - US
+        - GB
+        - NG
+        - DE
+        - FR
+        - CA
+        - SG
+        - AE
+        - ZA
+        - NL
+        - CH
+        - IE
+        - IN
+        - BR
+        - AU
+        - JP
+        - HK
+        - LU

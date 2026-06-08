@@ -91,6 +91,8 @@ This produces:
 - `data/raw/*.csv`
 - `data/quality_reports/*.csv`
 - `data/quality_reports/stakeholder_report.md`
+- `data/processed/entityq.duckdb` (if dbt/DuckDB has been run)
+- `data/streaming/kafka_run_metadata.json` (after Kafka producer execution)
 
 ### 3. Start the API
 
@@ -159,6 +161,16 @@ curl http://127.0.0.1:8000/quality/scorecard
 
 - `severity`
 - `limit`
+
+## Running Tests
+
+Run the repository smoke tests with pytest:
+
+```bash
+pytest tests/test_pipeline_smoke.py
+```
+
+Additional tests can be added to the `tests/` folder as the data quality pipeline evolves.
 
 ## Project Structure
 

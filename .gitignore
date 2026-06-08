@@ -37,3 +37,21 @@ Thumbs.db
 # Modern stack generated files
 modern_stack/iceberg_lab/warehouse/
 modern_stack/iceberg_lab/notebooks/
+
+# Generated data and local runtime artifacts
+data/raw/
+data/processed/
+data/streaming/
+data/quality_reports/*.csv
+data/quality_reports/*.json
+data/curated/
+
+# Keep selected markdown reports if desired
+!data/quality_reports/*_report.md
+!data/quality_reports/*_stakeholder_report.md
+!data/quality_reports/*_summary.md
+
+# dbt generated artifacts
+dbt/entityq/target/
+dbt/entityq/logs/
+dbt/entityq/dbt_packages/
