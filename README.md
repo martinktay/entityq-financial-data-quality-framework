@@ -70,6 +70,8 @@ EntityQ measures quality across:
 - AI/ML-enabled anomaly detection
 - SQL quality checks
 - SQL stakeholder views
+- FastAPI REST API for data quality summaries and DuckDB mart access
+- Kafka provider feed producer/consumer for streaming quality validation
 - Pytest smoke tests
 
 ## Tools Used
@@ -80,9 +82,72 @@ EntityQ measures quality across:
 - scikit-learn
 - SQL
 - Pytest
+- FastAPI
+- Uvicorn
+- Confluent Kafka
 - Markdown
 - DuckDB-ready SQL design
 - Streamlit-ready reporting extension
+
+## Getting Started
+
+1. Install dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+2. Run the full EntityQ pipeline:
+
+```bash
+python -m entityq.run_pipeline
+```
+
+   This creates synthetic raw datasets and quality reports under `data/raw` and `data/quality_reports`.
+
+3. Start the API service:
+
+```bash
+uvicorn entityq.api:app --reload --host 127.0.0.1 --port 8000
+```
+
+   To enable the `/dbt/entity-quality-summary` endpoint, run dbt in `dbt/entityq` first:
+
+```bash
+cd dbt/entityq
+dbt run --profiles-dir .
+```
+
+4. Optionally publish provider feed events to Kafka:
+
+```bash
+python -m entityq.kafka_provider_producer
+```
+
+   Requires a local Kafka broker at `localhost:9092` by default.
+
+5. Optionally consume provider events and produce Kafka quality reports:
+
+```bash
+python -m entityq.kafka_provider_consumer
+```
+
+   This writes:
+   - `data/quality_reports/kafka_provider_quality_summary.csv`
+   - `data/quality_reports/kafka_provider_failed_events.csv`
+   - `data/streaming/kafka_provider_consumed_events.jsonl`
+
+## API Endpoints
+
+- `GET /health`
+- `GET /quality/summary`
+- `GET /quality/scorecard`
+- `GET /quality/failed-rules`
+- `GET /quality/anomalies`
+- `GET /quality/stakeholder-report`
+- `GET /dbt/entity-quality-summary`
+
+`/quality/failed-rules` supports `severity` and `limit` query parameters.
 
 ## Project Structure
 
@@ -96,17 +161,21 @@ entityq-financial-data-quality-framework/
     raw/
     processed/
     quality_reports/
+    streaming/
   docs/
   sql/
   src/
     entityq/
-      data_generation.py
-      profiling.py
-      validation.py
-      metrics.py
+      api.py
       anomaly_detection.py
+      data_generation.py
+      kafka_provider_consumer.py
+      kafka_provider_producer.py
+      metrics.py
+      profiling.py
       reporting.py
       run_pipeline.py
+      validation.py
   tests/
   dashboards/
   notebooks/
