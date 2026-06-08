@@ -8,3 +8,7 @@ duckdb
 tabulate
 dbt-core
 dbt-duckdb
+fastapi
+uvicorn
+duckdb
+confluent-kafka
