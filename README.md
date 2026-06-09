@@ -32,6 +32,8 @@ EntityQ contains a complete end-to-end quality workflow:
 - Produce stakeholder-ready markdown reports
 - Expose quality outputs through FastAPI endpoints
 - Support dbt/DuckDB quality marts and Kafka streaming validations
+- Apply SQL-based onboarding checks for new incoming datasets
+- Produce remediation summaries and quarantine/curation guidance for exception handling
 
 ## Key Capabilities
 
@@ -46,6 +48,7 @@ EntityQ contains a complete end-to-end quality workflow:
 - dbt/DuckDB model access for mart-level queries
 - local Kafka producer and consumer flows for provider feed validation
 - Streamlit dashboard support
+- SQL-based dataset onboarding checks and remediation workflows
 
 ## Supported Data Assets
 
@@ -91,6 +94,7 @@ This produces:
 - `data/raw/*.csv`
 - `data/quality_reports/*.csv`
 - `data/quality_reports/stakeholder_report.md`
+- `data/quality_reports/counterparty_trade_links_remediation_summary.md` (example remediation workflow output)
 - `data/processed/entityq.duckdb` (if dbt/DuckDB has been run)
 - `data/streaming/kafka_run_metadata.json` (after Kafka producer execution)
 
@@ -205,6 +209,12 @@ entityq-financial-data-quality-framework/
   dags/
   dbt/
 ```
+
+## Dataset Onboarding and Remediation
+
+The repository now includes SQL-based onboarding checks for incoming datasets, with example remediation logic for a counterparty trade links scenario. The SQL checks live in `sql/quality_checks.sql`, and an example remediation summary is available in `data/quality_reports/counterparty_trade_links_remediation_summary.md`.
+
+This demonstrates how data quality rules can be applied during onboarding, how exceptions can be quarantined for review, and how remediation guidance can be surfaced to data operations teams.
 
 ## Dependencies and Tooling
 
