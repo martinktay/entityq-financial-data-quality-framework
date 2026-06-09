@@ -95,6 +95,8 @@ This produces:
 - `data/quality_reports/*.csv`
 - `data/quality_reports/stakeholder_report.md`
 - `data/quality_reports/counterparty_trade_links_remediation_summary.md` (example remediation workflow output)
+- `data/curated/counterparty_trade_links_curated.csv`
+- `data/curated/counterparty_trade_links_quarantine.csv`
 - `data/processed/entityq.duckdb` (if dbt/DuckDB has been run)
 - `data/streaming/kafka_run_metadata.json` (after Kafka producer execution)
 
@@ -186,6 +188,7 @@ entityq-financial-data-quality-framework/
   config/
   data/
     raw/
+    curated/
     processed/
     quality_reports/
     streaming/
