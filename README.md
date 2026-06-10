@@ -237,10 +237,12 @@ Primary tools used in this project:
 - plotly
 - pytest
 - tabulate
+- Apache Iceberg (experimental curated table lab)
+- Trino (experimental SQL access lab)
 
 ## Architecture
 
-EntityQ is built as a reference data quality pipeline with distinct ingestion, transformation, validation, scoring, reporting, and access layers.
+EntityQ is built as a reference data quality pipeline with distinct ingestion, transformation, validation, scoring, reporting, and access layers. The repo also includes experimental lab components for Iceberg curated tables and Trino SQL access, demonstrating how a data-quality pipeline can surface validated assets to analytical query engines.
 
 ```mermaid
 flowchart TD
