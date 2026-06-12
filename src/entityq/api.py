@@ -11,6 +11,7 @@ from fastapi import FastAPI, HTTPException, Query
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 QUALITY_REPORT_DIR = PROJECT_ROOT / "data" / "quality_reports"
 DUCKDB_PATH = PROJECT_ROOT / "data" / "processed" / "entityq.duckdb"
+CURATED_DIR = PROJECT_ROOT / "data" / "curated"
 
 app = FastAPI(
     title="EntityQ Data Quality API",
@@ -41,6 +42,24 @@ def read_csv_report(file_name: str) -> pd.DataFrame:
         )
 
     return pd.read_csv(file_path)
+
+
+def read_text_report(file_name: str) -> str:
+    """
+    Read a markdown or text report from the quality_reports directory.
+    """
+    file_path = QUALITY_REPORT_DIR / file_name
+
+    if not file_path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=(
+                f"{file_name} was not found. "
+                "Run `python -m entityq.run_full_demo` first."
+            ),
+        )
+
+    return file_path.read_text(encoding="utf-8")
 
 
 def dataframe_to_records(df: pd.DataFrame) -> list[dict[str, Any]]:
@@ -150,18 +169,82 @@ def get_stakeholder_report() -> dict[str, str]:
     """
     Return the stakeholder markdown report as text.
     """
-    report_path = QUALITY_REPORT_DIR / "stakeholder_report.md"
+    return {"report": read_text_report("stakeholder_report.md")}
 
-    if not report_path.exists():
+
+@app.get("/counterparty/rule-results")
+def get_counterparty_rule_results() -> list[dict[str, Any]]:
+    """
+    Return the counterparty onboarding rule results.
+    """
+    df = read_csv_report("counterparty_trade_links_rule_results.csv")
+    return dataframe_to_records(df)
+
+
+@app.get("/counterparty/failed-records")
+def get_counterparty_failed_records() -> list[dict[str, Any]]:
+    """
+    Return the counterparty onboarding failed records.
+    """
+    df = read_csv_report("counterparty_trade_links_failed_records.csv")
+    return dataframe_to_records(df)
+
+
+@app.get("/counterparty/sql-rule-results")
+def get_counterparty_sql_rule_results() -> list[dict[str, Any]]:
+    """
+    Return the counterparty SQL rule results.
+    """
+    df = read_csv_report("sql_counterparty_trade_rule_results.csv")
+    return dataframe_to_records(df)
+
+
+@app.get("/counterparty/remediation-summary")
+def get_counterparty_remediation_summary() -> dict[str, str]:
+    """
+    Return the counterparty remediation markdown summary.
+    """
+    return {
+        "report": read_text_report("counterparty_trade_links_remediation_summary.md")
+    }
+
+
+@app.get("/counterparty/curated-records")
+def get_counterparty_curated_records() -> list[dict[str, Any]]:
+    """
+    Return the curated counterparty records.
+    """
+    file_path = CURATED_DIR / "counterparty_trade_links_curated.csv"
+
+    if not file_path.exists():
         raise HTTPException(
             status_code=404,
             detail=(
-                "stakeholder_report.md was not found. "
-                "Run `python -m entityq.run_pipeline` first."
+                "counterparty_trade_links_curated.csv was not found. "
+                "Run `python -m entityq.run_full_demo` first."
             ),
         )
 
-    return {"report": report_path.read_text(encoding="utf-8")}
+    return dataframe_to_records(pd.read_csv(file_path))
+
+
+@app.get("/counterparty/quarantine-records")
+def get_counterparty_quarantine_records() -> list[dict[str, Any]]:
+    """
+    Return the quarantined counterparty records.
+    """
+    file_path = CURATED_DIR / "counterparty_trade_links_quarantine.csv"
+
+    if not file_path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=(
+                "counterparty_trade_links_quarantine.csv was not found. "
+                "Run `python -m entityq.run_full_demo` first."
+            ),
+        )
+
+    return dataframe_to_records(pd.read_csv(file_path))
 
 
 @app.get("/dbt/entity-quality-summary")

@@ -83,7 +83,7 @@ python -m pip install -r requirements.txt
 
 Use a virtual environment and Python 3.10+.
 
-### 2. Run the pipeline
+### 2. Run the core pipeline
 
 ```bash
 python -m entityq.run_pipeline
@@ -100,13 +100,21 @@ This produces:
 - `data/processed/entityq.duckdb` (if dbt/DuckDB has been run)
 - `data/streaming/kafka_run_metadata.json` (after Kafka producer execution)
 
-### 3. Start the API
+### 3. Run the full demo
+
+```bash
+python -m entityq.run_full_demo
+```
+
+This runs the core pipeline followed by the counterparty onboarding, SQL quality checks, and remediation workflow.
+
+### 4. Start the API
 
 ```bash
 uvicorn entityq.api:app --reload --host 127.0.0.1 --port 8000
 ```
 
-### 4. Build the dbt/DuckDB mart
+### 5. Build the dbt/DuckDB mart
 
 To enable `GET /dbt/entity-quality-summary`, run dbt from the `dbt/entityq` directory:
 
@@ -115,7 +123,7 @@ cd dbt/entityq
 dbt run --profiles-dir .
 ```
 
-### 5. Validate Kafka provider feed events
+### 6. Validate Kafka provider feed events
 
 Publish events to Kafka:
 
@@ -135,7 +143,7 @@ Generated outputs:
 - `data/quality_reports/kafka_provider_failed_events.csv`
 - `data/streaming/kafka_provider_consumed_events.jsonl`
 
-### 6. Launch the Streamlit dashboard
+### 7. Launch the Streamlit dashboard
 
 ```bash
 streamlit run dashboards/streamlit_app.py
@@ -187,6 +195,7 @@ entityq-financial-data-quality-framework/
   requirements.txt
   config/
   data/
+    incoming/
     raw/
     curated/
     processed/
@@ -198,13 +207,17 @@ entityq-financial-data-quality-framework/
     entityq/
       api.py
       anomaly_detection.py
+      counterparty_trade_remediation.py
       data_generation.py
       kafka_provider_consumer.py
       kafka_provider_producer.py
       metrics.py
+      new_dataset_onboarding.py
       profiling.py
       reporting.py
+      run_full_demo.py
       run_pipeline.py
+      sql_quality_runner.py
       validation.py
   tests/
   dashboards/
@@ -215,7 +228,9 @@ entityq-financial-data-quality-framework/
 
 ## Dataset Onboarding and Remediation
 
-The repository now includes SQL-based onboarding checks for incoming datasets, with example remediation logic for a counterparty trade links scenario. The SQL checks live in `sql/quality_checks.sql`, and an example remediation summary is available in `data/quality_reports/counterparty_trade_links_remediation_summary.md`.
+The repository now includes SQL-based onboarding checks for incoming datasets, with example remediation logic for a counterparty trade links scenario. The onboarding SQL checks live in `sql/counterparty_trade_quality_checks.sql`, and an example remediation summary is available in `data/quality_reports/counterparty_trade_links_remediation_summary.md`.
+
+The orchestration command for the full demo is `python -m entityq.run_full_demo`.
 
 This demonstrates how data quality rules can be applied during onboarding, how exceptions can be quarantined for review, and how remediation guidance can be surfaced to data operations teams.
 

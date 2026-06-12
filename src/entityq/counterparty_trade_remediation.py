@@ -36,7 +36,7 @@ def clean_text_columns(df: pd.DataFrame) -> pd.DataFrame:
     """
     cleaned = df.copy()
 
-    for column in cleaned.select_dtypes(include=["object"]).columns:
+    for column in cleaned.select_dtypes(include=["object", "string"]).columns:
         cleaned[column] = cleaned[column].fillna("").astype(str).str.strip()
 
     return cleaned
