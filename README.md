@@ -2,6 +2,13 @@
 
 ![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![EntityQ Tests](https://github.com/martinktay/entityq-financial-data-quality-framework/actions/workflows/tests.yml/badge.svg)
+![Docker](https://img.shields.io/badge/Docker-Airflow%20Compose-2496ED)
+![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-2.9.3-017CEE)
+![DuckDB](https://img.shields.io/badge/DuckDB-Analytical%20Store-FFF000)
+![dbt](https://img.shields.io/badge/dbt-DuckDB-FF694B)
+![Kafka](https://img.shields.io/badge/Kafka-Provider%20Feed-231F20)
+![FastAPI](https://img.shields.io/badge/FastAPI-Quality%20API-009688)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B)
 
 EntityQ is a modern data quality framework for synthetic financial entity and provider reference data. It simulates noisy data ingestion, data profiling, validation, anomaly detection, quality scoring, stakeholder reporting, and API-driven quality access.
 
@@ -273,22 +280,42 @@ Next steps:
 
 ```text
 entityq-financial-data-quality-framework/
+  .github/
+    workflows/
   README.md
   pyproject.toml
   requirements.txt
   config/
+    dataset_registry.yml
   data/
     incoming/
-    raw/
-    curated/
-    processed/
     quality_reports/
-    streaming/
   docs/
+    airflow_orchestration.md
+    architecture.md
+    data_dictionary.md
+    data_quality_strategy.md
+    quality_rules_catalog.md
+    root_cause_playbook.md
+    images/
+      entityq_architecture_diagram.svg
   modern_stack/
     iceberg_lab/
+    superset_lab/
     trino_lab/
+  orchestration/
+    airflow/
+      Dockerfile
+      docker-compose.yml
+      requirements-airflow.txt
+      dags/
+        entityq_quality_pipeline_dag.py
   sql/
+    counterparty_trade_quality_checks.sql
+    create_tables.sql
+    entity_quality_checks.sql
+    quality_checks.sql
+    stakeholder_views.sql
   src/
     entityq/
       api.py
@@ -306,8 +333,22 @@ entityq-financial-data-quality-framework/
       sql_quality_runner.py
       validation.py
   tests/
+    test_airflow_orchestration.py
+    test_counterparty_trade_remediation.py
+    test_counterparty_workflows.py
+    test_dataset_registry.py
+    test_new_dataset_onboarding.py
+    test_pipeline_smoke.py
+    test_run_full_demo.py
+    test_sql_quality_runner.py
   dashboards/
+    streamlit_app.py
   notebooks/
   dags/
+    entity_quality_pipeline.py
   dbt/
+    entityq/
+      models/
+        marts/
+        staging/
 ```
