@@ -1,5 +1,6 @@
 # EntityQ: Financial Entity Data Quality & Automation Framework
 
+![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![EntityQ Tests](https://github.com/martinktay/entityq-financial-data-quality-framework/actions/workflows/tests.yml/badge.svg)
 
 EntityQ is a modern data quality framework for synthetic financial entity and provider reference data. It simulates noisy data ingestion, data profiling, validation, anomaly detection, quality scoring, stakeholder reporting, and API-driven quality access.
@@ -18,39 +19,9 @@ EntityQ is built to show how a repeatable, automated data quality pipeline can b
 
 ## Architecture Diagram
 
-EntityQ is organized as a layered pipeline with a core synthetic-data flow and a counterparty onboarding / remediation flow.
+EntityQ is organized as a layered pipeline that ingests synthetic, dirty, and streaming financial reference data; applies Python and SQL quality workflows; separates curated and quarantined outputs; and exposes quality results through dbt/DuckDB, FastAPI, and Streamlit.
 
-```mermaid
-flowchart TD
-    A[Synthetic Financial Entity Data] --> B[Core Pipeline]
-    B --> C[Profile, Validate, Score, Detect Anomalies]
-    C --> D[Core Quality Reports]
-    D --> E[Stakeholder Report]
-    D --> F[FastAPI Quality Endpoints]
-    D --> G[Streamlit Dashboard]
-
-    H[Dirty Counterparty CSV in data/incoming] --> I[New Dataset Onboarding]
-    I --> J[SQL Quality Checks]
-    J --> K[Failed Record Exceptions]
-    K --> L[Remediation and Curation]
-    L --> M[Curated Output]
-    L --> N[Quarantine Output]
-    L --> O[Remediation Summary]
-    O --> F
-    O --> G
-
-    P[Provider Feed] --> Q[Kafka Producer / Consumer]
-    Q --> R[Kafka Quality Reports]
-    R --> F
-    R --> G
-
-    M --> S[dbt / DuckDB Mart Access]
-    S --> F
-
-    T[Apache Iceberg Lab] -.-> U[Curated Table Exploration]
-    V[Trino Lab] -.-> W[Distributed SQL Access]
-    X[Superset BI Notes] -.-> Y[Visualization Patterns]
-```
+![EntityQ Financial Entity Data Quality & Automation Framework](docs/images/entityq_architecture_diagram.svg)
 
 ## What the Framework Does
 
@@ -91,7 +62,7 @@ The recommended entry point is the full demo runner:
 python -m entityq.run_full_demo
 ```
 
-That command runs the core pipeline, the new counterparty onboarding workflow, the SQL quality checks, and the remediation / curation flow in sequence.
+That command runs the core pipeline, the new counterparty onboarding workflow, the SQL quality checks, and the remediation / curation flow in sequence. Kafka is intentionally excluded from the default demo because it requires a running local broker and is better treated as a separate streaming workflow.
 
 ## Core Entity Quality Pipeline
 
@@ -116,6 +87,23 @@ This produces:
 - `data/raw/*.csv`
 - `data/quality_reports/*.csv`
 - `data/quality_reports/stakeholder_report.md`
+
+## Individual Stages
+
+Run the main workflows separately when you want to inspect or debug a single layer:
+
+```bash
+python -m entityq.run_pipeline
+python -m entityq.new_dataset_onboarding --dataset counterparty_trade_links
+python -m entityq.sql_quality_runner
+python -m entityq.counterparty_trade_remediation
+python -m entityq.kafka_provider_producer
+python -m entityq.kafka_provider_consumer
+uvicorn entityq.api:app --reload --host 127.0.0.1 --port 8000
+streamlit run dashboards/streamlit_app.py
+```
+
+The Kafka commands are kept separate from the full demo so the core workflow remains reproducible without requiring a local Kafka broker.
 
 ## New Dataset Onboarding
 
@@ -197,6 +185,36 @@ The dashboard is organized into six tabs:
 - Remediation Summary
 
 The main visual story is raw dirty dataset to failed rules to failed records to remediation to curated/quarantined split.
+
+## Airflow Orchestration
+
+EntityQ now includes an Airflow DAG at `orchestration/airflow/dags/entityq_quality_pipeline_dag.py` that coordinates the local quality workflow.
+
+The DAG runs these tasks in order:
+
+- `run_core_pipeline`
+- `run_new_dataset_onboarding`
+- `run_sql_quality_checks`
+- `run_remediation_workflow`
+
+Kafka tasks are intentionally not included in the default DAG because they require a running local Kafka broker.
+
+Start Airflow with Docker Compose from the Airflow folder:
+
+```bash
+cd orchestration/airflow
+docker compose up airflow-init
+docker compose up -d
+docker compose ps
+```
+
+Open the Airflow UI at `http://localhost:8080`, then trigger the `entityq_quality_pipeline` DAG from the UI.
+
+Stop the environment when you are done:
+
+```bash
+docker compose down --volumes --remove-orphans
+```
 
 ## Modern Stack Labs: Trino, Iceberg, Superset
 

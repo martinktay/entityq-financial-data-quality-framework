@@ -13,6 +13,7 @@ def main() -> None:
     This combines the core synthetic data pipeline with the newer
     counterparty dataset onboarding, SQL validation, and remediation flows.
     """
+    # Kafka remains a separate streaming demo because it requires a running broker.
     print("Running core EntityQ pipeline...")
     run_core_pipeline()
 

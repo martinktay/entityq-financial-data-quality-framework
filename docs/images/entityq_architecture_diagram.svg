@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">EntityQ Financial Entity Data Quality and Automation Framework</title>
+  <desc id="desc">Enterprise architecture diagram showing data sources, processing and quality engine, storage outputs, modelling and access, and governance positioning for EntityQ.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.13"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/>
+    </marker>
+    <style>
+      .page { fill: #ffffff; }
+      .title { font: 700 34px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 17px Arial, Helvetica, sans-serif; fill: #475569; }
+      .section-title { font: 700 15px Arial, Helvetica, sans-serif; letter-spacing: 0.8px; fill: #334155; }
+      .section-bg { fill: #f8fafc; stroke: #dbeafe; stroke-width: 1.2; rx: 16; }
+      .box { fill: #ffffff; stroke-width: 1.4; rx: 10; filter: url(#shadow); }
+      .source { stroke: #2563eb; }
+      .process { stroke: #0f766e; }
+      .storage { stroke: #7c3aed; }
+      .access { stroke: #16a34a; }
+      .governance { stroke: #475569; }
+      .box-title { font: 700 14px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .box-sub { font: 400 11.5px Arial, Helvetica, sans-serif; fill: #475569; }
+      .callout-title { font: 700 14px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .callout-copy { font: 400 12px Arial, Helvetica, sans-serif; fill: #334155; }
+      .arrow-blue { fill: none; stroke: #2563eb; stroke-width: 2.2; marker-end: url(#arrow-blue); }
+      .arrow-teal { fill: none; stroke: #0f766e; stroke-width: 2.2; marker-end: url(#arrow-teal); }
+      .arrow-purple { fill: none; stroke: #7c3aed; stroke-width: 2.2; marker-end: url(#arrow-purple); }
+      .footer { fill: #0f172a; rx: 12; }
+      .footer-text { font: 700 15px Arial, Helvetica, sans-serif; fill: #ffffff; }
+    </style>
+  </defs>
+
+  <rect class="page" width="1600" height="900"/>
+
+  <text class="title" x="800" y="52" text-anchor="middle">EntityQ Financial Entity Data Quality &amp; Automation Framework</text>
+  <text class="subtitle" x="800" y="82" text-anchor="middle">A practical framework for profiling, validating, remediating, and exposing financial entity and reference data quality outputs.</text>
+
+  <rect class="section-bg" x="32" y="116" width="246" height="666"/>
+  <rect class="section-bg" x="304" y="116" width="300" height="666"/>
+  <rect class="section-bg" x="630" y="116" width="300" height="666"/>
+  <rect class="section-bg" x="956" y="116" width="274" height="666"/>
+  <rect class="section-bg" x="1256" y="116" width="312" height="666"/>
+
+  <text class="section-title" x="155" y="145" text-anchor="middle">1. DATA SOURCES</text>
+  <text class="section-title" x="454" y="145" text-anchor="middle">2. PROCESSING &amp; QUALITY ENGINE</text>
+  <text class="section-title" x="780" y="145" text-anchor="middle">3. STORAGE &amp; QUALITY OUTPUTS</text>
+  <text class="section-title" x="1093" y="145" text-anchor="middle">4. MODELLING &amp; ACCESS</text>
+  <text class="section-title" x="1412" y="145" text-anchor="middle">5. POSITIONING / GOVERNANCE</text>
+
+  <!-- Data sources -->
+  <rect class="box source" x="58" y="180" width="194" height="132"/>
+  <text class="box-title" x="155" y="205" text-anchor="middle">Synthetic Financial</text>
+  <text class="box-title" x="155" y="223" text-anchor="middle">Entity &amp; Reference Data</text>
+  <text class="box-sub" x="76" y="250">- entities.csv</text>
+  <text class="box-sub" x="76" y="267">- issuers.csv</text>
+  <text class="box-sub" x="76" y="284">- hierarchy.csv</text>
+  <text class="box-sub" x="76" y="301">- kyc_attributes.csv</text>
+  <text class="box-sub" x="76" y="318">- provider_feed.csv</text>
+
+  <rect class="box source" x="58" y="374" width="194" height="118"/>
+  <text class="box-title" x="155" y="400" text-anchor="middle">New Dirty Dataset</text>
+  <text class="box-sub" x="76" y="428">- counterparty_trade_links.csv</text>
+  <text class="box-sub" x="76" y="447">- trade-linked counterparty,</text>
+  <text class="box-sub" x="76" y="464">  issuer, KYC, risk, and</text>
+  <text class="box-sub" x="76" y="481">  provider data</text>
+
+  <rect class="box source" x="58" y="562" width="194" height="112"/>
+  <text class="box-title" x="155" y="588" text-anchor="middle">Streaming Provider</text>
+  <text class="box-title" x="155" y="606" text-anchor="middle">Feed Demo</text>
+  <text class="box-sub" x="76" y="634">- provider-feed-raw Kafka topic</text>
+  <text class="box-sub" x="76" y="653">- simulated third-party</text>
+  <text class="box-sub" x="76" y="670">  provider events</text>
+
+  <!-- Processing -->
+  <rect class="box process" x="334" y="168" width="240" height="142"/>
+  <text class="box-title" x="454" y="194" text-anchor="middle">EntityQ Core Python Pipeline</text>
+  <text class="box-sub" x="354" y="221">- data generation</text>
+  <text class="box-sub" x="354" y="238">- data profiling</text>
+  <text class="box-sub" x="354" y="255">- validation rules</text>
+  <text class="box-sub" x="354" y="272">- quality scorecards</text>
+  <text class="box-sub" x="354" y="289">- anomaly detection</text>
+  <text class="box-sub" x="354" y="306">- stakeholder report</text>
+
+  <rect class="box process" x="334" y="342" width="240" height="126"/>
+  <text class="box-title" x="454" y="368" text-anchor="middle">New Dataset Onboarding</text>
+  <text class="box-sub" x="354" y="395">- dataset registry</text>
+  <text class="box-sub" x="354" y="412">- schema checks</text>
+  <text class="box-sub" x="354" y="429">- column profiling</text>
+  <text class="box-sub" x="354" y="446">- rule-level validation</text>
+  <text class="box-sub" x="354" y="463">- failed-record exceptions</text>
+
+  <rect class="box process" x="334" y="492" width="240" height="132"/>
+  <text class="box-title" x="454" y="518" text-anchor="middle">SQL Quality Checks</text>
+  <text class="box-title" x="454" y="536" text-anchor="middle">&amp; Remediation</text>
+  <text class="box-sub" x="354" y="563">- DuckDB SQL checks</text>
+  <text class="box-sub" x="354" y="580">- business rules</text>
+  <text class="box-sub" x="354" y="597">- curation logic</text>
+  <text class="box-sub" x="354" y="614">- quarantine logic</text>
+  <text class="box-sub" x="354" y="631">- remediation summary</text>
+
+  <rect class="box process" x="334" y="648" width="240" height="106"/>
+  <text class="box-title" x="454" y="674" text-anchor="middle">Kafka Producer &amp; Consumer</text>
+  <text class="box-sub" x="354" y="701">- publish provider events</text>
+  <text class="box-sub" x="354" y="718">- consume provider events</text>
+  <text class="box-sub" x="354" y="735">- validate streaming records</text>
+  <text class="box-sub" x="354" y="752">- provider quality summary</text>
+
+  <!-- Storage -->
+  <rect class="box storage" x="660" y="166" width="112" height="82"/>
+  <text class="box-title" x="716" y="194" text-anchor="middle">data/raw</text>
+  <text class="box-sub" x="675" y="221">- synthetic raw</text>
+  <text class="box-sub" x="675" y="238">  CSV datasets</text>
+
+  <rect class="box storage" x="788" y="166" width="112" height="82"/>
+  <text class="box-title" x="844" y="194" text-anchor="middle">data/processed</text>
+  <text class="box-sub" x="803" y="221">- DuckDB store</text>
+  <text class="box-sub" x="803" y="238">- entityq.duckdb</text>
+
+  <rect class="box storage" x="660" y="274" width="240" height="150"/>
+  <text class="box-title" x="780" y="302" text-anchor="middle">data/quality_reports</text>
+  <text class="box-sub" x="680" y="329">- profiling summaries</text>
+  <text class="box-sub" x="680" y="346">- validation outputs</text>
+  <text class="box-sub" x="680" y="363">- rule results and scorecards</text>
+  <text class="box-sub" x="680" y="380">- stakeholder_report.md</text>
+  <text class="box-sub" x="680" y="397">- kafka_provider_quality_summary.csv</text>
+  <text class="box-sub" x="680" y="414">- kafka_provider_failed_events.csv</text>
+
+  <rect class="box storage" x="660" y="454" width="112" height="92"/>
+  <text class="box-title" x="716" y="482" text-anchor="middle">data/curated</text>
+  <text class="box-sub" x="675" y="509">- valid trade</text>
+  <text class="box-sub" x="675" y="526">  records</text>
+  <text class="box-sub" x="675" y="543">- accepted output</text>
+
+  <rect class="box storage" x="788" y="454" width="112" height="92"/>
+  <text class="box-title" x="844" y="482" text-anchor="middle">data/quarantine</text>
+  <text class="box-sub" x="803" y="509">- failed records</text>
+  <text class="box-sub" x="803" y="526">- suspicious rows</text>
+  <text class="box-sub" x="803" y="543">- review queue</text>
+
+  <rect class="box storage" x="660" y="652" width="240" height="82"/>
+  <text class="box-title" x="780" y="680" text-anchor="middle">data/streaming</text>
+  <text class="box-sub" x="680" y="707">- consumed Kafka events</text>
+  <text class="box-sub" x="680" y="724">- run metadata</text>
+
+  <!-- Modelling and access -->
+  <rect class="box access" x="986" y="180" width="214" height="118"/>
+  <text class="box-title" x="1093" y="206" text-anchor="middle">dbt + DuckDB</text>
+  <text class="box-title" x="1093" y="224" text-anchor="middle">Modelling Layer</text>
+  <text class="box-sub" x="1006" y="251">- staging models</text>
+  <text class="box-sub" x="1006" y="268">- mart summaries</text>
+  <text class="box-sub" x="1006" y="285">- data quality views</text>
+  <text class="box-sub" x="1006" y="302">- dbt tests</text>
+
+  <rect class="box access" x="986" y="368" width="214" height="118"/>
+  <text class="box-title" x="1093" y="394" text-anchor="middle">FastAPI Service</text>
+  <text class="box-sub" x="1006" y="421">- quality summaries API</text>
+  <text class="box-sub" x="1006" y="438">- failed rules API</text>
+  <text class="box-sub" x="1006" y="455">- anomaly results API</text>
+  <text class="box-sub" x="1006" y="472">- downstream access</text>
+
+  <rect class="box access" x="986" y="556" width="214" height="112"/>
+  <text class="box-title" x="1093" y="582" text-anchor="middle">Streamlit Dashboard</text>
+  <text class="box-sub" x="1006" y="609">- data quality monitoring</text>
+  <text class="box-sub" x="1006" y="626">- failed-record review</text>
+  <text class="box-sub" x="1006" y="643">- stakeholder visibility</text>
+
+  <!-- Governance -->
+  <rect class="box governance" x="1286" y="188" width="252" height="386"/>
+  <text class="callout-title" x="1412" y="218" text-anchor="middle">Positioning</text>
+  <text class="callout-copy" x="1310" y="252">EntityQ demonstrates practical</text>
+  <text class="callout-copy" x="1310" y="271">experience in financial data</text>
+  <text class="callout-copy" x="1310" y="290">quality management, entity and</text>
+  <text class="callout-copy" x="1310" y="309">reference data validation,</text>
+  <text class="callout-copy" x="1310" y="328">SQL-based quality checks,</text>
+  <text class="callout-copy" x="1310" y="347">automation, remediation</text>
+  <text class="callout-copy" x="1310" y="366">workflows, Kafka provider-feed</text>
+  <text class="callout-copy" x="1310" y="385">simulation, dbt/DuckDB</text>
+  <text class="callout-copy" x="1310" y="404">modelling, API access, and</text>
+  <text class="callout-copy" x="1310" y="423">stakeholder reporting.</text>
+  <line x1="1310" y1="454" x2="1514" y2="454" stroke="#cbd5e1" stroke-width="1"/>
+  <text class="callout-title" x="1412" y="486" text-anchor="middle">Professional Story</text>
+  <text class="callout-copy" x="1310" y="518">Ingest dirty data, detect failures,</text>
+  <text class="callout-copy" x="1310" y="537">separate curated and quarantined</text>
+  <text class="callout-copy" x="1310" y="556">records, then expose trusted</text>
+  <text class="callout-copy" x="1310" y="575">outputs for technical and business</text>
+  <text class="callout-copy" x="1310" y="594">stakeholders.</text>
+
+  <!-- Arrows -->
+  <path class="arrow-blue" d="M252 246 C285 246 298 239 334 239"/>
+  <path class="arrow-blue" d="M252 433 C294 433 302 405 334 405"/>
+  <path class="arrow-blue" d="M252 618 C294 618 302 701 334 701"/>
+
+  <path class="arrow-teal" d="M574 215 C610 215 620 207 660 207"/>
+  <path class="arrow-teal" d="M574 239 C650 239 704 207 788 207"/>
+  <path class="arrow-teal" d="M574 275 C610 275 620 336 660 336"/>
+
+  <path class="arrow-teal" d="M454 468 L454 492"/>
+  <path class="arrow-teal" d="M574 552 C610 552 620 350 660 350"/>
+  <path class="arrow-teal" d="M574 575 C608 575 622 500 660 500"/>
+  <path class="arrow-teal" d="M574 596 C626 596 730 500 788 500"/>
+
+  <path class="arrow-teal" d="M574 701 C612 701 622 693 660 693"/>
+  <path class="arrow-teal" d="M574 681 C626 681 626 382 660 382"/>
+
+  <path class="arrow-purple" d="M900 207 C944 207 948 239 986 239"/>
+  <path class="arrow-purple" d="M900 350 C946 350 948 427 986 427"/>
+  <path class="arrow-purple" d="M900 382 C948 382 948 612 986 612"/>
+  <path class="arrow-purple" d="M1093 298 L1093 368"/>
+  <path class="arrow-purple" d="M1200 239 C1238 239 1248 360 1286 360"/>
+  <path class="arrow-purple" d="M1200 427 C1238 427 1248 386 1286 386"/>
+  <path class="arrow-purple" d="M1200 612 C1238 612 1248 414 1286 414"/>
+
+  <rect class="footer" x="270" y="814" width="1060" height="42"/>
+  <text class="footer-text" x="800" y="841" text-anchor="middle">Implemented Stack: Python | SQL | DuckDB | dbt | Kafka | FastAPI | Streamlit</text>
+</svg>

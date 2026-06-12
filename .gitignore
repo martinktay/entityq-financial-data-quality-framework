@@ -40,6 +40,8 @@ Thumbs.db
 
 # Logs
 *.log
+orchestration/airflow/logs/
+orchestration/airflow/postgres-db-data/
 
 # Modern stack generated files
 modern_stack/iceberg_lab/warehouse/
